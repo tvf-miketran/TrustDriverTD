@@ -1,0 +1,565 @@
+/* ============================================================
+   TrustDriver homepage — translated from Figma "homepage"
+   (file MA1InEujxSwj80XmySI9iT). Fixed 1440px canvas, exact
+   Figma coordinates for pixel-faithful alignment.
+   Fonts: Figma uses "Google Sans" (not on Google Fonts) —
+   Poppins (headings) + Inter (body) are the closest free
+   substitutes loaded from Google Fonts.
+   ============================================================ */
+
+:root {
+  --accent: #1e90ff;       /* primary blue (CTAs, brand) */
+  --ink: #091520;          /* near-black text */
+  --white: #ffffff;
+  --hero-overlay: rgba(9, 21, 32, 0.91);
+  --page-w: 1440px;
+  --font-head: "Google Sans", "Inter", system-ui, sans-serif;
+  --font-body: "Google Sans", "Inter", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+p { margin: 0; }
+
+/* Fixed-width canvas centered in the viewport, mirroring the
+   1440px Figma frame. Each <section> is a positioned band whose
+   children are absolutely placed at their exact Figma coords. */
+.page {
+  width: var(--page-w);
+  margin: 0 auto;
+  position: relative;
+  /* scaled down by js/fit-page.js when the window is narrower than 1440,
+     so desktop/preview windows never get a horizontal scrollbar */
+  zoom: var(--page-scale, 1);
+  /* clip (not hidden): clips the bleeding 1440px Figma layers on the X
+     axis WITHOUT creating a scroll container — which would break the
+     sticky header. */
+  overflow-x: clip;
+}
+
+.band {
+  position: relative;
+  width: var(--page-w);
+}
+
+/* Absolutely-positioned helper — children read like Figma layers */
+.abs { position: absolute; }
+
+/* Image placeholders: visible boxes at the exact Figma footprint
+   so layout is correct before real assets drop in. */
+.ph {
+  background:
+    repeating-linear-gradient(45deg, #e9eef3 0 12px, #dfe6ee 12px 24px);
+  border: 1px dashed #b8c4d0;
+  color: #6b7a89;
+  font: 600 12px/1.4 var(--font-body);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 8px;
+}
+.ph--dark {
+  background:
+    repeating-linear-gradient(45deg, #16222f 0 12px, #1b2a39 12px 24px);
+  border-color: #2c3e50;
+  color: #8aa0b4;
+}
+
+/* Buttons ----------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: none;
+  border-radius: 12px;
+  font: 600 14px/1.5 var(--font-head);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn--primary { background: var(--accent); color: #fff; padding: 12px 20px; }
+.btn--white   { background: #fff; color: var(--ink); padding: 12px 20px; }
+.btn--primary-sm { background: var(--accent); color: #fff; padding: 11px 16px; }
+
+/* ============================================================
+   NAV  (node 1:12)
+   ============================================================ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;   /* 1440 inside .page; fluid on subpages */
+  height: 81px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 100px;
+}
+.nav__brand { display: flex; align-items: center; }
+.nav__logo { display: inline-flex; align-items: center; }
+.nav__logo img { display: block; height: 24px; width: auto; }
+.nav__links {
+  display: flex;
+  gap: 35px;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.nav__links a { color: inherit; text-decoration: none; }
+.nav__links a:hover { color: var(--accent); }
+
+/* On the scaled homepage canvas, counter-zoom the sticky nav so the header
+   renders at the same 1:1 size as on the fluid subpages. */
+.page > .nav { zoom: calc(1 / var(--page-scale, 1)); }
+
+/* Stamped header on fluid subpages: tighten first, then collapse into a
+   deliberate two-row layout (brand + CTA on top, links below).
+   The homepage is a fixed 1440 canvas, so these only affect subpages. */
+@media (max-width: 1280px) {
+  .nav { padding: 18px clamp(24px, 4vw, 60px); column-gap: 16px; }
+  .nav__links { gap: 18px; font-size: 13px; }
+  .nav .btn--primary-sm { padding: 10px 12px; font-size: 13px; white-space: nowrap; }
+}
+@media (max-width: 1060px) {
+  .nav { flex-wrap: wrap; height: auto; row-gap: 12px; }
+  .nav__links { order: 3; flex-basis: 100%; flex-wrap: wrap; gap: 10px 20px; white-space: normal; }
+}
+
+/* ============================================================
+   HERO  (node 1:29)  — band height 793, starts under nav
+   ============================================================ */
+.hero { height: 793px; background: #0b1a28; overflow: hidden; }
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  /* Figma fill stack: #091520 @ 91% over Rectangle650 image */
+  background: linear-gradient(var(--hero-overlay), var(--hero-overlay)),
+              url("../images/homepage/Rectangle650.png") center / cover no-repeat;
+}
+/* right-side blue angled accent + cut-out people photo */
+.hero__accent {
+  position: absolute;
+  left: 738px;          /* Figma Vector 12 */
+  top: 98.5px;
+  width: 708.56px;
+  height: 694.76px;
+  z-index: 1;
+  background: var(--accent);
+  /* 5-pt shape: flat top, full right, bottom edge, left point */
+  clip-path: polygon(36% 0, 100% 0, 100% 100%, 18% 100%, 0 65%);
+}
+/* Union 2 — white stripe artwork, clipped to the polygon by the parent */
+.hero__stripe {
+  position: absolute;
+  left: 218px;
+  top: 263px;
+  width: 276px;
+  height: 430px;
+  opacity: 0.2;
+}
+.hero__people {
+  position: absolute;
+  left: 459px;   /* right edge lands at the 1440 canvas edge */
+  top: 0;
+  width: 981px;
+  height: 793px;
+  z-index: 1;
+}
+.hero__content {
+  position: absolute;
+  left: 100px;
+  top: 118px;
+  width: 596px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  z-index: 2;
+}
+.hero__copy { display: flex; flex-direction: column; gap: 20px; color: #fff; }
+.hero h1 {
+  margin: 0;
+  width: 647px;   /* design: heading bleeds past the 596px content column */
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 57px;
+  line-height: 1.08;
+  letter-spacing: -1.18px;
+}
+.hero__sub { 
+  width: 596px;
+  height: 72px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 150%;
+  color: #FFFFFF;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.hero__cta { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
+/* Figma: both CTAs share the 316 width; tighter padding fits the longer label */
+.hero__cta .btn { width: 316px; padding-left: 16px; padding-right: 16px; }
+.ico { width: 14px; height: 14px; display: inline-block; }
+
+
+/* Shared section heading (the big centered H2s) */
+.h-section {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 43px;
+  line-height: 1.26;
+  letter-spacing: -1px;
+  color: var(--ink);
+  margin: 0;
+}
+
+/* Check / bullet rows shared across sections */
+.checkrow { display: flex; align-items: center; gap: 16px; font-size: 16px; line-height: 1.5; }
+.checkrow .dot {
+  width: 14px; height: 14px; flex: 0 0 14px;
+  color: var(--accent);
+}
+/* Concentric "target" bullet */
+.dot--ring .dot__o {                              /* Ellipse 145: faint outer ring */
+  fill: none; stroke: var(--accent); stroke-width: 2; opacity: 0.2;
+}
+.dot--ring .dot__i { fill: var(--accent); }       /* Ellipse 144: solid 6px center */
+
+/* ============================================================
+   WHY 3-IN-4 BUYERS  (node 1:51)  — band 1076
+   ============================================================ */
+.s-why { position: relative; height: 1076px; background: #f7f9fb; overflow: hidden; }
+.s-why__stripes {
+  position: absolute; top: 18.5%; right: -24px; width: 276px; height: auto; z-index: 0;
+}
+
+.s-why__h { position: absolute; left: 297px; top: 101px; width: 845px; text-align: center; }
+.s-why__left {
+  position: absolute; left: 100px; top: 308px; width: 533px;
+  display: flex; flex-direction: column; gap: 23px;
+}
+.s-why__lead { font-family: var(--font-head); font-weight: 600; font-size: 28px; line-height: 1.36; color: var(--ink); }
+.s-why__reality {
+  font-family: var(--font-body); font-weight: 600; font-size: 18px; line-height: 1.5;
+  color: var(--accent);
+}
+
+.s-why__list { display: flex; flex-direction: column; }
+.s-why__list .checkrow { padding: 0 0 6px; }
+.s-why__list .divider { height: 1px; background: #e4e9ee; margin: 0 0 6px; }
+.s-why__note b { font-weight: 600; font-size: 16px; }
+.s-why__note p { margin-top: 9px; font-size: 16px; line-height: 1.5; color: #4b5a68; }
+.s-why__btn { align-self: flex-start; }
+
+.s-why__card {
+  position: absolute; left: 884px; top: 300px; width: 312px; z-index: 2;
+  background: #fff; border-radius: 14px; padding: 48px 36px 44px;
+  box-shadow: 0 24px 60px rgba(20, 40, 80, .14);
+  text-align: center;
+}
+.ring { position: relative; width: 174px; height: 174px; margin: 0 auto; }
+.ring svg { transform: rotate(-90deg); }
+.ring__num {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head); font-weight: 600; font-size: 44px; line-height: 1.2;
+  letter-spacing: -0.02em; color: var(--ink);
+}
+.s-why__card p { margin-top: 30px; font-weight: 500; font-size: 16px; line-height: 1.5; color: var(--ink); }
+.s-why__car {
+  position: absolute; left: 690px; top: 635px; width: 643px; height: 345px; z-index: 1;
+}
+
+/* check-fill rows (24px icon) shared by benchmark / pilot lists */
+.featrow { display: flex; align-items: center; gap: 6px; font-size: 16px; line-height: 1.5; color: var(--ink); }
+.featrow .chk { width: 24px; height: 24px; flex: 0 0 24px; color: var(--accent); }
+.featrow img.chk { width: 18px; height: 18px; flex: 0 0 18px; }
+
+/* ============================================================
+   HOW DOES YOUR DEALERSHIP COMPARE  (node 1:112) — band 733
+   ============================================================ */
+.s-cmp { height: 733px; background: #fff; }
+/* Benchmark snapshot dashboard — Figma: 528px card, section pad 96/120, gap 90 */
+.s-cmp__card {
+  position: absolute; left: 120px; top: 45px; width: 528px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 24px 60px rgba(20, 40, 80, .12);
+  display: flex; flex-direction: column;
+}
+.bmk__head {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  padding: 18px 20px; border-bottom: 1px solid #eef2f6;
+}
+.bmk__titles { display: flex; flex-direction: column; gap: 4px; }
+.bmk__titles b { font-family: var(--font-head); font-weight: 700; font-size: 16px; line-height: 1.3; color: var(--ink); }
+.bmk__titles span { font-size: 13px; line-height: 1.4; color: #6F6C90; }
+.bmk__chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 12px; border-radius: 999px; background: #EAF2FF;
+  font-weight: 700; font-size: 12px; line-height: 1; color: var(--accent); white-space: nowrap;
+}
+.bmk__body { display: flex; flex-direction: column; gap: 16px; padding: 20px; }
+.bmk__gauge {
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+  padding: 20px; border-radius: 18px; background: #fff;
+  box-shadow: 0 8px 28px rgba(20, 40, 80, .1);
+}
+.bmk__ring { position: relative; width: 180px; height: 180px; }
+.bmk__ringlabel { position: absolute; left: 0; right: 0; top: 54.5px; text-align: center; font-weight: 700; font-size: 12px; line-height: 1.25; color: #6F6C90; }
+.bmk__score { position: absolute; left: 0; right: 0; top: 70px; text-align: center; font-family: var(--font-head); font-weight: 700; font-size: 36px; line-height: 1.25; color: var(--ink); }
+.bmk__outof { position: absolute; left: 0; right: 0; top: 114.5px; text-align: center; font-weight: 700; font-size: 12px; line-height: 1.25; color: var(--accent); }
+.bmk__cap { font-size: 13px; line-height: 1.4; color: #6F6C90; }
+.bmk__row { display: flex; gap: 12px; }
+.bmk__tile {
+  flex: 1; display: flex; flex-direction: column; gap: 10px;
+  padding: 16px 14px; border-radius: 16px; background: #fff;
+  box-shadow: 0 8px 28px rgba(20, 40, 80, .1);
+}
+.bmk__tilehead { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 12px; line-height: 1.3; color: #6F6C90; }
+.bmk__tileicon {
+  width: 32px; height: 32px; flex: 0 0 32px; border-radius: 10px; background: #EAF2FF;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.bmk__tileval { display: flex; flex-direction: column; gap: 2px; }
+.bmk__tileval b { font-family: var(--font-head); font-weight: 700; font-size: 22px; line-height: 1.25; color: var(--ink); }
+.bmk__tileval span { font-size: 12px; line-height: 1.4; color: #6F6C90; }
+.s-cmp__right { position: absolute; left: 738px; top: 123px; width: 582px; }
+.s-cmp__right .h-section { width: 582px; }
+.s-cmp__p { margin-top: 12px; font-size: 16px; line-height: 1.5; color: #4b5a68; }
+.s-cmp__incl { margin-top: 32px; font-family: var(--font-head); font-weight: 600; font-size: 16px; color: var(--ink); }
+.s-cmp__list { margin-top: 9px; display: flex; flex-direction: column; gap: 7px; }
+.s-cmp__btn { margin-top: 32px; width: 315px; }
+
+/* ============================================================
+   EXPERIENCE DIFFERENTIATOR  (node 1:143) — band 1125
+   ============================================================ */
+.s-diff { height: 1125px; background: #edf0f4; }   /* Figma: light cool-gray band */
+.s-diff__h { position: absolute; left: 282px; top: 120px; width: 875px; text-align: center; }
+.s-diff__rows {
+  position: absolute; left: 131px; top: 276px; width: 1178px;
+  display: flex; flex-direction: column; align-items: center; gap: 14px;
+}
+.s-diff__rows .line { display: flex; justify-content: center; gap: 14px; }
+.s-diff__rows .featrow { background: #fff; border-radius: 10000px; padding: 10px 14px; gap: 10px; }
+.s-diff__quote {
+  position: absolute; left: 226px; top: 602px; width: 987px; height: 132px;
+  background: var(--accent); border-radius: 16px; color: #fff; overflow: hidden;
+  display: flex; align-items: center; padding: 0 44px; gap: 200px;
+}
+.s-diff__quote p { position: relative; z-index: 1; }   /* keep text above the stripe */
+.s-diff__quote p:first-of-type { font-family: var(--font-head); font-weight: 700; font-size: 24px; line-height: 1.3; width: 360px; }
+.s-diff__quote p:last-of-type { font-size: 16px; line-height: 1.5; width: 380px; }
+.s-diff__stripe { position: absolute; right: 0; top: 0; width: 220px; height: 132px; z-index: 0; }
+.s-diff__shadow { position: absolute; left: 266px; top: 1000px; width: 908px; height: 128px; z-index: 0; }
+.s-diff__car { position: absolute; left: 262px; top: 784px; width: 916px; height: 289px; z-index: 1; }
+
+/* ============================================================
+   BUILT AROUND HOW CUSTOMERS BUY — 4 stages (node 1:198) — 689
+   ============================================================ */
+.s-stages { height: 689px; background: #fff; }
+.s-stages__head { position: absolute; left: 100px; top: 120px; width: 1240px; text-align: center; }
+.s-stages__head .h-section { width: 1240px; }
+.s-stages__sub1 { margin: 24px auto 0; width: 634px; font-size: 16px; line-height: 1.5; color: #4b5a68; }
+.s-stages__sub2 { margin: 20px auto 0; width: 1240px; font-size: 18px; line-height: 1.6; font-weight: 600; color: var(--ink); }
+.s-stages__row { position: absolute; left: 100px; top: 383px; width: 1240px; height: 186px; display: flex; }
+.stage {
+  width: 331px; height: 186px; margin-left: -28px;
+  background: #fceaea;
+  clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 50%, calc(100% - 28px) 100%, 0 100%, 28px 50%);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px;
+}
+.stage:first-child { margin-left: 0; }
+.stage:nth-child(2) { background: #f0f0f6; }
+.stage:nth-child(3) { background: #e5dcf5; }
+.stage:nth-child(4) { background: #f9e0f1; }
+.stage__icon {
+  width: 51px; height: 51px; border-radius: 50%;
+  background: #fff; box-shadow: 0 2px 8px rgba(9, 21, 32, 0.08);
+  display: flex; align-items: center; justify-content: center;
+}
+.stage__icon svg { width: 20px; height: 20px; }
+.stage__icon img, .ftile__icon img, .pcard__icon img { display: block; }
+.stage__label { font-family: var(--font-head); font-weight: 600; font-size: 15px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink); }
+
+/* ============================================================
+   REPEATABLE BEHAVIOURS — dark CTA band (node 1:232) — 535
+   ============================================================ */
+.s-repeat {
+  height: 535px; background: var(--accent); overflow: hidden;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 24px; text-align: center;
+}
+.s-repeat__bg {
+  position: absolute; inset: 0; width: 1440px; height: 535px;
+  background: url("../images/homepage/sec5bg.png") center / cover no-repeat;
+}
+.s-repeat__h { position: relative; width: 1030px; color: #fff; margin: 0; }
+.s-repeat__p { position: relative; width: 926px; color: #e7f1fd; font-size: 17px; line-height: 1.5; }
+.s-repeat__btn { position: relative; }
+
+/* ============================================================
+   CX INTELLIGENCE — feature grid (node 1:238) — 863
+   ============================================================ */
+.s-feat { height: 863px; background: #fff; }
+.s-feat__head { position: absolute; left: 374px; top: 120px; width: 691px; text-align: center; }
+.s-feat__head .h-section { width: 691px; }
+.s-feat__p { margin-top: 19px; font-size: 15.5px; line-height: 1.5; color: #4b5a68; }
+.s-feat__grid {
+  position: absolute; left: 100px; top: 353px; width: 1240px;
+  display: grid; grid-template-columns: repeat(4, 295px); gap: 20px;
+}
+.ftile {
+  height: 185px; border: 1px solid #e7edf3; border-radius: 12px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px;
+  background: #F0F3F6;
+}
+.ftile__icon {
+  width: 48px; height: 48px; padding: 8px; border-radius: 47px;
+  background: #fff; color: var(--accent);
+  box-shadow: 0 0 40.5px rgba(9, 52, 93, 0.14);   /* Figma: soft even glow */
+  display: flex; align-items: center; justify-content: center;
+}
+.ftile__icon svg { width: 24px; height: 24px; }
+.ftile__label { font-family: var(--font-head); font-weight: 600; font-size: 18px; color: var(--ink); }
+
+/* ============================================================
+   YOUR CRM STAYS — integrations orbit (node 1:294) — 780
+   ============================================================ */
+.s-crm { height: 780px; background: #F0F3F6; }
+.s-crm__left { position: absolute; left: 100px; top: 216px; width: 581px; }
+.s-crm__left h2 { width: 483px; margin: 0; font-family: var(--font-head); font-weight: 600; font-size: 42px; line-height: 1.26; letter-spacing: -1px; color: var(--ink); }
+.s-crm__left p { margin-top: 20px; font-size: 17px; line-height: 1.5; color: #4b5a68; width: 519px; }
+.s-crm__left p:first-of-type { font-weight: 600; color: var(--ink); }   /* intro line is bold */
+.s-crm__orbit { position: absolute; left: 746px; top: 115px; width: 594px; height: 550px; }
+.s-crm__rings { position: absolute; left: 51px; top: 32px; width: 486px; height: 486px; }
+.s-crm__rings i { position: absolute; border: 1px solid #e2e9f0; border-radius: 50%; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.s-crm__rings i:nth-child(1) { width: 486px; height: 486px; border-width: 2px; border-color: #1E90FF; }   /* thicker outer guide ring */
+.s-crm__rings i:nth-child(2) { width: 340px; height: 340px; border: none; background: #1E90FF; }  /* solid blue donut */
+.s-crm__rings i:nth-child(3) { width: 185px; height: 185px; border: none; background: #fff; }     /* white center hole */
+.chip {
+  position: absolute; width: 173px; height: 76px; border-radius: 16px;
+  background: #fff; box-shadow: 0 8px 24px rgba(9,21,32,0.10);
+  display: flex; align-items: center; justify-content: center;
+}
+.chip img { max-width: 130px; max-height: 44px; width: auto; height: auto; display: block; }
+.chip.c1 { left: 211px; top: 0; }
+.chip.c2 { left: 421px; top: 135px; }
+.chip.c3 { left: 421px; top: 339px; }
+.chip.c4 { left: 211px; top: 474px; }
+.chip.c5 { left: 0; top: 339px; }
+.chip.c6 { left: 0; top: 135px; }
+
+/* ============================================================
+   SEE TRUSTDRIVER IN ACTION — video (node 1:327) — 1051
+   ============================================================ */
+.s-video { height: 1051px; background: #fff; }
+.s-video__head { position: absolute; left: 340px; top: 120px; width: 760px; text-align: center; }
+.s-video__head h2 { margin: 0; font-family: var(--font-head); font-weight: 600; font-size: 42px; line-height: 1.2; letter-spacing: -1px; color: var(--ink); }
+.s-video__head p { margin-top: 25px; font-size: 16px; line-height: 1.5; color: #4b5a68; }
+.s-video__frame {
+  position: absolute; left: 100px; top: 297px; width: 1240px; height: 634px;
+  border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.s-video__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.s-video__frame::after { content: ""; position: absolute; inset: 0; background: rgba(9, 21, 32, 0.35); }
+.s-video__play { width: 90px; height: 90px; display: block; position: relative; z-index: 1; }   /* icon is the full white play button */
+
+/* ============================================================
+   EXPERIENCE IN YOUR DEALERSHIP — pilot (node 1:335) — 735
+   ============================================================ */
+.s-pilot { height: 735px; background: #f0f3f6; }
+.s-pilot__blob {
+  position: absolute; 
+  right: 140px;
+  top: 120px;
+  width: 444px;
+  height: 417px;
+  background: url("../images/homepage/pilot-blob.png") center / contain no-repeat;
+}
+.s-pilot__left { position: absolute; left: 100px; top: 209px; width: 422px; }
+.s-pilot__left h2 { width: 422px; margin: 0; font-family: var(--font-head); font-weight: 600; font-size: 42px; line-height: 1.2; letter-spacing: -1px; color: var(--ink); }
+.s-pilot__left p { margin-top: 31px; font-size: 16px; line-height: 1.5; color: #4b5a68; }
+.s-pilot__btn { margin-top: 31px; }
+.s-pilot__cards { position: absolute; left: 784px; top: 101px; width: 556px; height: 533px; }
+.pcol { position: absolute; width: 268px; display: flex; flex-direction: column; gap: 20px; }
+.pcol.left { left: 0; top: 0; }
+.pcol.right { left: 288px; top: 40px; }
+.pcard {
+  height: 151px; border: 1px solid #e7edf3; border-radius: 16px; background: #fff;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px;
+}
+.pcard__icon { width: 40px; height: 40px; border-radius: 50%; background: #1e90ff; display: flex; align-items: center; justify-content: center; }
+.pcard__icon svg { width: 24px; height: 24px; }
+.pcard__icon img { filter: brightness(0) invert(1); }   /* recolor icon to white on the blue circle */
+.pcard__label { font-family: var(--font-head); font-weight: 600; font-size: 18px; color: var(--ink); }
+
+/* ============================================================
+   CTA band (symbol 1:378) — 529  [approximated]
+   ============================================================ */
+.s-cta { height: 529px; background: var(--accent); color: #fff; overflow: hidden; }
+.s-cta__bg { position: absolute; inset: 0; background: radial-gradient(120% 140% at 85% 15%, #38a0ff 0%, #1e90ff 55%, #1577d8 100%); }
+/* Figma Frame 10: 832×335 block, vertically centered (top=(529-335)/2=97), gap 20 */
+.s-cta__left {
+  position: absolute; left: 100px; top: 97px; width: 832px; z-index: 2;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 20px;
+}
+.s-cta__left h2 { margin: 0; width: 780px; font-family: var(--font-head); font-weight: 600; font-size: 44px; line-height: 1.2; letter-spacing: -0.88px; }
+.s-cta__left p { width: 457px; font-size: 16px; line-height: 1.5; color: #fff; }
+/* Figma Frame 9: 2×2, each button 188.5px, 12px gaps (total 389px) */
+.s-cta__btns { display: grid; grid-template-columns: 188.5px 188.5px; gap: 12px; }
+.s-cta .btn--ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.7); padding: 12px 20px; }
+.s-cta__stripe { 
+  position: absolute; 
+  left: 945px;
+  top: 75px;
+  width: 495px;
+  height: 389px;
+  z-index: 0; }
+.s-cta__car { 
+  position: absolute; 
+  left: 657px; 
+  top: 0; 
+  width: 783px; 
+  height: 529px; z-index: 1; }
+
+/* ============================================================
+   FOOTER (symbol 1:400) — 541  [approximated]
+   ============================================================ */
+/* Light footer (design node 33:1120) */
+.s-footer { background: #fff; color: #6b7688; padding: 64px 100px 40px; }
+.foot__top { display: flex; justify-content: space-between; gap: 60px; }
+.foot__brand { width: 440px; }
+.foot__logo { height: 28px; width: auto; display: block; }
+.foot__brand p { margin-top: 20px; font-size: 15px; line-height: 1.7; color: #4b5a68; }
+.foot__social { margin-top: 22px; display: flex; gap: 16px; }
+.foot__social a { display: inline-flex; }
+.foot__social img { width: 18px; height: 18px; display: block; }
+.foot__cols { display: flex; gap: 90px; }
+.foot__col h4 { margin: 0 0 22px; font-family: var(--font-head); font-weight: 600; font-size: 18px; color: var(--ink); }
+.foot__col a { display: block; margin-bottom: 16px; font-size: 15px; color: #6b7688; text-decoration: none; }
+.foot__col a:hover { color: var(--accent); }
+.foot__contact { display: flex; flex-direction: column; gap: 18px; }
+.foot__contact .row { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: #4b5a68; text-decoration: none; }
+.foot__contact .row svg { width: 18px; height: 18px; flex: 0 0 18px; margin-top: 2px; color: var(--ink); }
+.foot__bar { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e7edf3; display: flex; justify-content: space-between; font-size: 14px; color: #6b7688; }
+.foot__bar a { color: inherit; text-decoration: underline; }

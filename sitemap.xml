@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- TrustDriver sitemap — flat .html URL style (confirmed 2026-07).
+     TODO(@yvan): add the remaining live pages (home, platform, cx-benchmark, about)
+     and future article pages under /insights/<slug>.html as they ship. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://trustdriver.com/</loc>
+  </url>
+  <url>
+    <loc>https://trustdriver.com/solutions.html</loc>
+  </url>
+  <url>
+    <loc>https://trustdriver.com/pilot-program.html</loc>
+  </url>
+  <url>
+    <loc>https://trustdriver.com/research-insights.html</loc>
+  </url>
+  <url>
+    <loc>https://trustdriver.com/about.html</loc>
+  </url>
+  <url>
+    <loc>https://trustdriver.com/platform.html</loc>
+  </url>
+</urlset>

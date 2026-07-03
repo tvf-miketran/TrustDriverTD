@@ -1,0 +1,1009 @@
+/* ==========================================================================
+   TrustDriver — Solutions page styles
+   Values pulled from the Figma design (frame "Solutions", 1440px).
+   Scoped with .sol- prefixes so it can sit alongside the global stylesheet.
+   ========================================================================== */
+
+:root {
+  --sol-blue: #1E90FF;
+  --sol-ink: #091520;
+  --sol-paper: #F0F3F6;
+  --sol-red: #E93737;
+  --sol-green: #1EB464;
+  --sol-orange: #F08018;
+  --sol-soft-shadow: 22px 22px 67px 0 rgba(21, 83, 143, 0.08);
+  --sol-hairline: rgba(9, 21, 32, 0.2);
+  --sol-font: "Google Sans", "Product Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ---------- page base ---------- */
+
+.sol-page {
+  margin: 0;
+  background: var(--sol-paper);
+  font-family: var(--sol-font);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--sol-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+.sol-page *,
+.sol-page *::before,
+.sol-page *::after { box-sizing: border-box; }
+
+.sol-page h1, .sol-page h2, .sol-page h3, .sol-page p, .sol-page ul, .sol-page blockquote { margin: 0; }
+.sol-page ul { padding: 0; list-style: none; }
+.sol-page img { display: block; }
+
+.sol-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* ---------- shared type ---------- */
+
+.sol-h2 {
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--sol-ink);
+  text-wrap: pretty;
+}
+.sol-h2--center { text-align: center; margin-left: auto; margin-right: auto; }
+.sol-h2--white { color: #fff; text-align: center; }
+
+.sol-body { font-size: 16px; line-height: 1.5; color: var(--sol-ink); }
+.sol-body--semibold { font-weight: 600; }
+.sol-body--blue { font-weight: 700; color: var(--sol-blue); }
+.sol-body--center { text-align: center; }
+.sol-body--white { color: #fff; }
+
+.sol-lead {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.5;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------- pills / chips / buttons ---------- */
+
+.sol-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border-radius: 1000px;
+  background: var(--sol-paper);
+  box-shadow: var(--sol-soft-shadow);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--sol-blue);
+}
+.sol-pill--white { background: #fff; }
+
+.sol-chipgroup { display: flex; flex-direction: column; gap: 14px; }
+.sol-chipgroup--center { gap: 16px; align-items: center; }
+
+.sol-chiprow { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+.sol-chiprow--center { justify-content: center; }
+.sol-chiprow--wide-gap { gap: 16px; }
+
+.sol-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 36px;
+  padding: 6px 10px;
+  border-radius: 10000px;
+  background: var(--sol-paper);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  white-space: nowrap;
+  color: var(--sol-ink);
+}
+.sol-chip--white { background: #fff; }
+.sol-chip--bold { font-weight: 700; }
+.sol-chip img { flex-shrink: 0; }
+
+.sol-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 316px;
+  max-width: 100%;
+  height: 47px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  color: inherit;
+  transition: filter 150ms ease, background-color 150ms ease;
+}
+.sol-btn:hover { filter: brightness(0.96); }
+.sol-btn--white { background: #fff; color: var(--sol-ink); }
+.sol-btn--ghost { box-shadow: inset 0 0 0 1px #fff; color: #fff; }
+.sol-btn--ghost:hover { filter: none; background: rgba(255, 255, 255, 0.1); }
+.sol-btn--primary { width: auto; background: var(--sol-blue); color: #fff; }
+.sol-btn--paper { background: var(--sol-paper); color: var(--sol-ink); }
+.sol-btn__icon { flex-shrink: 0; }
+
+.sol-divider {
+  width: 100%;
+  height: 0;
+  margin: 0;
+  border: none;
+  border-top: 1px solid var(--sol-hairline);
+}
+.sol-divider--soft { border-top-color: rgba(111, 108, 143, 0.4); }
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+
+.sol-hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--sol-blue);
+  padding: 120px 100px;
+}
+.sol-hero::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 113.5px;
+  height: 113.5px;
+  background: #fff;
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+.sol-hero__inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 44px;
+}
+
+.sol-hero__copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 35px;
+  width: 507px;
+  flex-shrink: 0;
+}
+
+.sol-hero__text { display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+
+.sol-hero__title {
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.sol-underline { position: relative; white-space: nowrap; }
+.sol-underline__stroke {
+  position: absolute;
+  left: 50%;
+  bottom: 4px;
+  transform: translateX(-50%);
+  width: 299px;
+  height: 5px;
+  overflow: visible;
+  color: #DF893D;
+}
+
+.sol-hero__lede { font-size: 16px; line-height: 1.5; color: #fff; }
+
+.sol-hero__actions { display: flex; flex-direction: column; gap: 16px; }
+
+/* hero illustration */
+.sol-hero__art-wrap { width: 688.536px; max-width: 100%; flex-shrink: 1; }
+.sol-hero__art { position: relative; width: 688.536px; height: 543px; }
+.sol-hero__art-frame {
+  position: absolute;
+  left: -0.348px;
+  top: -128.059px;
+  width: 688.884px;
+  height: 688.884px;
+  overflow: hidden;
+}
+.sol-hero__pill {
+  position: absolute;
+  top: 175.915px;
+  width: 197.767px;
+  height: 486.569px;
+  border-radius: 21.864px;
+  box-shadow: 0 0 0 5.018px rgba(255, 255, 255, 0.29), 15.055px 13.048px 79.091px 0 rgba(255, 255, 255, 0.25);
+}
+.sol-hero__pill--1 { left: 467.734px; background: #D2CED8; }
+.sol-hero__pill--2 { left: 245.217px; width: 199.86px; background: #D0DBD0; }
+.sol-hero__pill--3 { left: 23.383px; background: #C7D5E2; }
+.sol-hero__art-overlay {
+  position: absolute;
+  inset: 0;
+  width: 688.884px;
+  height: 688.884px;
+}
+.sol-hero__badges {
+  position: absolute;
+  left: 76.401px;
+  top: 21.696px;
+  width: 534.703px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sol-hero__badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 83.711px;
+  height: 83.711px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 33.484px 0 rgba(21, 83, 143, 0.08);
+}
+.sol-hero__badge img { width: 46px; height: 46px; }
+
+/* ==========================================================================
+   ROLE SECTIONS (Salespeople / Sales Managers)
+   ========================================================================== */
+
+.sol-role { padding: 121px 100px; }
+.sol-role--sales { background: #fff; }
+.sol-role--sales .sol-role__grid { flex-direction: row-reverse; }
+.sol-role--managers { background: var(--sol-paper); }
+
+.sol-role__grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 59px;
+}
+
+.sol-role__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  width: 520px;
+  flex-shrink: 0;
+}
+
+.sol-role__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 23px;
+  width: 575px;
+  flex-shrink: 1;
+}
+.sol-role__copy--wide { width: 600px; }
+
+/* challenge / outcome cards */
+.sol-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+}
+.sol-card--tint { background: rgba(233, 55, 55, 0.1); }
+.sol-card--grey { background: var(--sol-paper); }
+.sol-card--elevated { background: #fff; box-shadow: var(--sol-soft-shadow); }
+.sol-card--compact { padding: 24px; gap: 18px; }
+
+.sol-card__title { font-weight: 700; font-size: 22px; line-height: 1.5; }
+.sol-card__title--red { color: var(--sol-red); }
+.sol-card__title--blue { color: var(--sol-blue); }
+
+.sol-card__watermark {
+  position: absolute;
+  left: 435px;
+  top: -20px;
+  width: 88px;
+  height: 88px;
+  padding: 0;
+  opacity: 0.1;
+  pointer-events: none;
+}
+.sol-card__watermark--right { left: 474px; }
+
+.sol-ticklist {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  color: var(--sol-red);
+}
+.sol-ticklist--tick { color: var(--sol-blue); }
+.sol-ticklist li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 11.5px 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--sol-ink);
+}
+.sol-ticklist li:first-child { padding-top: 0; }
+.sol-ticklist li:last-child { padding-bottom: 0; }
+.sol-ticklist li + li { border-top: 1px solid var(--sol-hairline); }
+.sol-ticklist__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+.sol-ticklist__icon svg { overflow: visible; }
+
+/* dot list (sales managers) */
+.sol-dotlist { display: flex; flex-direction: column; }
+.sol-dotlist li { font-size: 16px; line-height: 1.5; }
+.sol-dotlist li::before { content: "\2022  "; white-space: pre; }
+
+/* ==========================================================================
+   DEALER PRINCIPALS
+   ========================================================================== */
+
+.sol-principals { background: #fff; padding: 120px 100px; }
+.sol-principals .sol-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 74px;
+}
+
+.sol-principals__top {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 65px;
+  width: 100%;
+}
+
+.sol-role__cards--principals { width: 559px; }
+
+.sol-role__copy--principals { width: 616px; }
+
+.sol-principals__statement {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 17px;
+  width: 100%;
+  text-align: center;
+}
+
+/* ---------- dealer group dashboard mockup ---------- */
+
+.sol-dash-wrap { width: 1152px; max-width: 100%; }
+
+.sol-dash {
+  margin: 0;
+  width: 1152px;
+  border-radius: 44px 44px 25.6px 25.6px;
+  background: var(--sol-paper);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  overflow: hidden;
+  transform-origin: top left;
+}
+
+.sol-dash__topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 24px;
+  background: #fff;
+  padding: 24px 44px;
+  height: 73.6px;
+}
+
+/* TrustDriver logo built from the raw wordmark PNG:
+   left half shown as-is, right half used as a mask over brand blue */
+.sol-tdlogo { position: relative; width: 108px; height: 15.429px; }
+.sol-tdlogo__left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 51.896px;
+  height: 15.429px;
+  background: url(../images/solutions/trustdriver-logo.png) 0% 50% / 208.108% 100.123% no-repeat;
+}
+.sol-tdlogo__right {
+  position: absolute;
+  left: 51.896px;
+  top: 0;
+  width: 56.104px;
+  height: 15.429px;
+  background: var(--sol-blue);
+  -webkit-mask: url(../images/solutions/trustdriver-logo.png) 100% 50% / 192.5% 100.123% no-repeat;
+  mask: url(../images/solutions/trustdriver-logo.png) 100% 50% / 192.5% 100.123% no-repeat;
+}
+
+.sol-dash__datechip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7.2px;
+  border-radius: 10.4px;
+  background: #E0EEFF;
+  padding: 4.8px 9.6px;
+  font-weight: 500;
+  font-size: 12.8px;
+  line-height: 1;
+  color: var(--sol-blue);
+}
+
+.sol-dash__heading { display: flex; flex-direction: column; gap: 7.2px; }
+.sol-dash__title {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.sol-dash__subtitle { font-size: 12.8px; line-height: 1.38; }
+
+/* KPI cards */
+.sol-dash__kpis { display: flex; gap: 16px; }
+.sol-kpi {
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  height: 104px;
+  border-radius: 16px;
+  background: #fff;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+}
+.sol-kpi::before {
+  content: "";
+  position: absolute;
+  left: 1.8px;
+  top: 0;
+  width: 256px;
+  height: 3.2px;
+  border-radius: 11.2px 11.2px 0 0;
+  background: var(--kpi-accent);
+}
+.sol-kpi__main { display: flex; align-items: center; gap: 9.6px; }
+.sol-kpi__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  flex-shrink: 0;
+}
+.sol-kpi__figures { display: flex; flex-direction: column; }
+.sol-kpi__value { font-weight: 700; font-size: 24px; line-height: 1; color: #1A2232; }
+.sol-kpi__label { font-size: 10px; line-height: 1; color: #4C5A71; margin-top: 5px; white-space: nowrap; }
+.sol-kpi__badge {
+  align-self: flex-start;
+  margin-left: 26px;
+  border-radius: 4.8px;
+  padding: 3.2px 4.8px;
+  font-weight: 700;
+  font-size: 6.4px;
+  line-height: 1;
+}
+.sol-kpi__foot { font-size: 12px; line-height: 1; color: #6F6C90; }
+
+/* comparison table */
+.sol-dash__panels { display: flex; gap: 16px; align-items: center; }
+.sol-dash__table-panel {
+  width: 704px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.sol-dash__panel-title {
+  background: #fff;
+  padding: 14.4px 16px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.sol-dash__panel-title--boxed { border: 0.8px solid rgba(111, 108, 144, 0.15); }
+
+.sol-dash__thead {
+  position: relative;
+  height: 35.2px;
+  background: #fff;
+  border: 0.8px solid rgba(111, 108, 144, 0.15);
+}
+.sol-dash__thead span {
+  position: absolute;
+  top: 13.6px;
+  font-weight: 700;
+  font-size: 7.2px;
+  line-height: 1;
+  color: #8F9FB6;
+  white-space: nowrap;
+}
+
+.sol-dash__row { position: relative; height: 45.6px; background: #fff; }
+.sol-dash__row--alt { background: #F6F8FB; }
+
+.sol-dash__dealer {
+  position: absolute;
+  left: 16px;
+  top: 15.2px;
+  display: flex;
+  align-items: center;
+  gap: 9.6px;
+  font-weight: 700;
+  font-size: 11.2px;
+  line-height: 1;
+  color: #1A2232;
+}
+.sol-dash__rank {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 8px;
+  line-height: 1;
+}
+
+.sol-dash__bar {
+  position: absolute;
+  top: 16.8px;
+  display: flex;
+  align-items: center;
+  gap: 4.8px;
+}
+.sol-dash__bar i {
+  position: relative;
+  display: block;
+  width: 64px;
+  height: 4px;
+  border-radius: 2.4px;
+  background: #D9E0EA;
+  overflow: hidden;
+}
+.sol-dash__bar i::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--bar-w);
+  height: 4px;
+  border-radius: 2.4px;
+  background: var(--bar-c);
+}
+.sol-dash__bar b { font-weight: 700; font-size: 10.4px; line-height: 1; color: var(--bar-c); }
+
+.sol-dash__leak {
+  position: absolute;
+  top: 13.6px;
+  border-radius: 4.8px;
+  background: #FEE1E1;
+  padding: 3.2px 5.6px;
+  font-weight: 700;
+  font-size: 9.6px;
+  line-height: 1;
+  color: #E63C3C;
+}
+
+.sol-dash__forecast {
+  position: absolute;
+  left: 606.4px;
+  top: 13.6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 9.6px;
+  padding: 2.4px 4.8px;
+  font-weight: 500;
+  font-size: 8.8px;
+  line-height: 1;
+  color: var(--fc);
+}
+.sol-dash__forecast i { width: 4.8px; height: 4.8px; border-radius: 50%; background: var(--fc); }
+
+/* key insights */
+.sol-dash__insights {
+  flex: 1;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.sol-insight {
+  position: relative;
+  height: 54.4px;
+  background: #fff;
+  border: 0.8px solid rgba(111, 108, 144, 0.15);
+  padding: 8.8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.sol-insight::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3.2px;
+  background: var(--ins);
+}
+.sol-insight__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28.8px;
+  height: 28.8px;
+  border-radius: 50%;
+  color: var(--ins);
+  flex-shrink: 0;
+}
+.sol-insight__text { display: flex; flex-direction: column; gap: 1.6px; }
+.sol-insight__tag { font-weight: 700; font-size: 6.4px; line-height: 1; color: var(--ins); }
+.sol-insight__name { font-weight: 700; font-size: 12.8px; line-height: 1; color: #1A2232; }
+.sol-insight__desc { font-size: 8px; line-height: 1; color: #4C5A71; }
+
+/* blue banner */
+.sol-dash__banner {
+  border-radius: 19.2px;
+  background: var(--sol-blue);
+  padding: 30.4px 40.8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+.sol-dash__banner-text {
+  width: 622.4px;
+  font-weight: 600;
+  font-size: 20.8px;
+  line-height: 1.47;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+.sol-dash__banner-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 224px;
+  height: 40px;
+  border-radius: 20px;
+  background: #fff;
+  font-weight: 700;
+  font-size: 13.6px;
+  line-height: 1;
+  color: var(--sol-ink);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   ONE PLATFORM
+   ========================================================================== */
+
+.sol-platform { background: var(--sol-paper); padding: 120px 100px; }
+.sol-platform__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.sol-platform__cards {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.sol-rolecard {
+  position: relative;
+  width: 332.333px;
+  min-height: 470px;
+  border-radius: 18px;
+  background: #fff;
+  padding: 71px 23px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 37px;
+}
+.sol-rolecard::before {
+  content: "";
+  position: absolute;
+  left: 60px;
+  top: 0;
+  width: 212px;
+  height: 9px;
+  border-radius: 0 0 32px 32px;
+  background: var(--role-accent);
+}
+.sol-rolecard__pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 1000px;
+  padding: 5px 12px;
+  background: var(--role-tint);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.09em;
+  color: var(--role-accent);
+}
+.sol-rolecard__list { width: 100%; display: flex; flex-direction: column; }
+.sol-rolecard__list li {
+  padding: 10px 0;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+}
+.sol-rolecard__list li:first-child { padding-top: 0; }
+.sol-rolecard__list li + li { border-top: 1px solid var(--sol-hairline); }
+
+.sol-platform__closing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 29px;
+  width: 100%;
+}
+
+/* ==========================================================================
+   OUTCOMES (quote + journey)
+   ========================================================================== */
+
+.sol-outcomes { background: #fff; padding: 120px 100px; }
+.sol-outcomes__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 63px;
+}
+.sol-outcomes__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.sol-quote-block { width: 100%; display: flex; flex-direction: column; }
+.sol-quote-block__row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 37px;
+  width: 1188px;
+  max-width: 100%;
+}
+.sol-quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 37px;
+  width: 574px;
+  flex-shrink: 0;
+}
+.sol-quote__mark { transform: scaleX(-1); color: var(--sol-blue); }
+.sol-quote p {
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--sol-ink);
+}
+.sol-quote-block__watermark {
+  position: absolute;
+  left: 679px;
+  top: 232px;
+  width: 439px;
+  height: 64px;
+  opacity: 0.1;
+}
+.sol-quote-block__photo {
+  position: relative;
+  width: 577px;
+  height: 479px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.sol-quote-block__photo img {
+  position: absolute;
+  left: 0;
+  top: -11px;
+  width: 100%;
+  height: auto;
+}
+
+/* journey ribbon */
+.sol-journey-wrap { width: 1240px; max-width: 100%; }
+.sol-journey {
+  display: flex;
+  height: 186.023px;
+  transform-origin: top left;
+}
+.sol-journey__step {
+  position: relative;
+  width: 331.006px;
+  height: 186.023px;
+  flex-shrink: 0;
+  color: var(--arrow-fill);
+}
+.sol-journey__step + .sol-journey__step { margin-left: -28.008px; }
+.sol-journey__arrow { position: absolute; inset: 0; width: 100%; height: 100%; }
+.sol-journey__icon {
+  position: absolute;
+  left: 140px;
+  top: 47.567px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50.924px;
+  height: 50.965px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 18.687px 0 rgba(21, 83, 143, 0.08);
+  color: var(--sol-ink);
+}
+.sol-journey__label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 120.618px;
+  font-weight: 700;
+  font-size: 18.687px;
+  line-height: 1.5;
+  letter-spacing: 0.09em;
+  text-align: center;
+  color: var(--sol-ink);
+}
+
+/* ==========================================================================
+   BENCHMARK CTA
+   ========================================================================== */
+
+.sol-benchmark { background: var(--sol-blue); padding: 120px 100px; }
+.sol-benchmark__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+.sol-benchmark__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 19px;
+}
+
+.sol-benchmark__cards {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  align-self: stretch;
+}
+.sol-benefit {
+  flex: 1;
+  min-height: 212px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 40px 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.sol-benefit__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 40.5px 0 rgba(9, 52, 93, 0.14);
+}
+.sol-benefit__label {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: center;
+  color: #fff;
+}
+
+.sol-benchmark__actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 1340px) {
+  .sol-hero,
+  .sol-role,
+  .sol-principals,
+  .sol-platform,
+  .sol-outcomes,
+  .sol-benchmark { padding-left: clamp(24px, 6vw, 100px); padding-right: clamp(24px, 6vw, 100px); }
+}
+
+@media (max-width: 1180px) {
+  .sol-hero__inner { flex-direction: column; align-items: flex-start; gap: 60px; }
+  .sol-role__grid,
+  .sol-principals__top { flex-direction: column; align-items: flex-start; gap: 48px; }
+  .sol-role--sales .sol-role__grid { flex-direction: column; }
+  .sol-role__cards,
+  .sol-role__cards--principals,
+  .sol-role__copy,
+  .sol-role__copy--wide,
+  .sol-role__copy--principals { width: 100%; }
+  .sol-card__watermark { left: auto; right: -18px; }
+  .sol-platform__cards { flex-wrap: wrap; }
+  .sol-benchmark__cards { flex-wrap: wrap; }
+  .sol-benefit { flex: 1 1 220px; }
+  .sol-quote-block__row { flex-wrap: wrap; }
+  .sol-page .sol-quote-block__watermark { display: none; }
+  .sol-quote { width: 100%; }
+  .sol-quote p { font-size: 36px; }
+  .sol-quote-block__photo { max-width: 100%; }
+}
+
+@media (max-width: 720px) {
+  .sol-hero { padding-top: 72px; padding-bottom: 72px; }
+  .sol-role,
+  .sol-principals,
+  .sol-platform,
+  .sol-outcomes,
+  .sol-benchmark { padding-top: 72px; padding-bottom: 72px; }
+  .sol-hero__title { font-size: 44px; }
+  .sol-underline__stroke { width: 210px; }
+  .sol-h2 { font-size: 32px; }
+  .sol-lead { font-size: 24px; }
+  .sol-quote p { font-size: 28px; }
+  .sol-hero__copy { width: 100%; }
+  .sol-btn { width: 100%; }
+  .sol-btn--primary { width: auto; }
+  .sol-chip { height: auto; min-height: 36px; white-space: normal; }
+  .sol-rolecard { width: 100%; min-height: 0; }
+  .sol-dash__banner { flex-direction: column; align-items: flex-start; }
+  .sol-dash__banner-text { width: auto; }
+}

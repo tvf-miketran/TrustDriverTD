@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- TODO(@yvan): confirm final title + description wording before launch -->
+  <title>About TrustDriver | Customer Experience Intelligence For Dealerships</title>
+  <meta name="description" content="TrustDriver began with a simple question: why do customers continue shopping after leaving the dealership? Discover the research and philosophy behind our customer experience platform.">
+  <meta name="robots" content="index, follow">
+  <!-- Canonical URL style confirmed: flat .html files -->
+  <link rel="canonical" href="https://trustdriver.com/about.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TrustDriver">
+  <meta property="og:title" content="About TrustDriver | Customer Experience Intelligence For Dealerships">
+  <meta property="og:description" content="TrustDriver began with a simple question: why do customers continue shopping after leaving the dealership? Discover the research and philosophy behind our customer experience platform.">
+  <meta property="og:url" content="https://trustdriver.com/about.html">
+  <!-- TODO(@yvan): add og:image once a social share image is available -->
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About TrustDriver | Customer Experience Intelligence For Dealerships">
+  <meta name="twitter:description" content="TrustDriver began with a simple question: why do customers continue shopping after leaving the dealership? Discover the research and philosophy behind our customer experience platform.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "@id": "https://trustdriver.com/about.html",
+        "url": "https://trustdriver.com/about.html",
+        "name": "About TrustDriver | Customer Experience Intelligence For Dealerships",
+        "description": "TrustDriver began with a simple question: why do customers continue shopping after leaving the dealership? Discover the research and philosophy behind our customer experience platform.",
+        "isPartOf": { "@type": "WebSite", "name": "TrustDriver", "url": "https://trustdriver.com/" },
+        "about": { "@type": "Organization", "name": "TrustDriver", "url": "https://trustdriver.com/" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://trustdriver.com/" },
+          { "@type": "ListItem", "position": 2, "name": "About", "item": "https://trustdriver.com/about.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Sans is expected to be loaded by the shared global stylesheet / header partial. -->
+  <!-- Shared chrome styles + fonts (nav/footer) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=27">
+  <link rel="stylesheet" href="css/about.css?v=1">
+  <script src="js/scale-fit.js" defer></script>
+</head>
+<body class="abt-page">
+
+<!-- @include:header -->
+<header class="nav">
+  <div class="nav__brand">
+    <a href="index.html" class="nav__logo" aria-label="TrustDriver home">
+      <img src="images/logo.png" alt="TrustDriver" width="168" height="24">
+    </a>
+  </div>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="index.html">Homepage</a>
+    <a href="platform.html">Platform</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="#">CX Benchmark</a><!-- TODO(@yvan): page not built yet -->
+    <a href="pilot-program.html">Pilot Program</a>
+    <a href="research-insights.html">Research &amp; Insights</a>
+    <a href="about.html">About</a>
+  </nav>
+  <a href="#" class="btn btn--primary-sm">Book Benchmark</a><!-- TODO(@yvan): wire booking destination -->
+</header>
+<!-- @endinclude:header -->
+
+<main>
+
+  <!-- ============================================================ HERO -->
+  <section class="abt-hero" aria-labelledby="abt-hero-title">
+    <img class="abt-hero__bg" src="images/about/hero-dealership-team.jpg" alt="" width="1490" height="838">
+    <div class="abt-hero__overlay" aria-hidden="true"></div>
+    <div class="abt-container abt-hero__inner">
+      <div class="abt-hero__copy">
+        <div class="abt-hero__text">
+          <h1 id="abt-hero-title" class="abt-hero__title" style="max-width: 842px;">We Didn't Set Out To Build Another Automotive Software Platform.</h1>
+          <p class="abt-body abt-body--white" style="max-width: 842px;">We set out to understand why some dealerships consistently create better customer experiences and why some opportunities progress while others quietly disappear.</p>
+          <p class="abt-hero__kicker">What we discovered became TrustDriver</p>
+        </div>
+        <div class="abt-hero__actions">
+          <!-- TODO(@yvan): wire hrefs — study PDF / benchmark booking not available yet -->
+          <a class="abt-btn abt-btn--white" href="#">Download Mystery Shopper Study</a>
+          <a class="abt-btn abt-btn--ghost" href="#">Book Customer Experience Benchmark</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ THE QUESTION THAT STARTED IT ALL -->
+  <section class="abt-story" aria-labelledby="abt-story-title">
+    <div class="abt-container abt-story__inner">
+      <div class="abt-sectionhead">
+        <p class="abt-pill">THE QUESTION THAT STARTED IT ALL</p>
+        <h2 id="abt-story-title" class="abt-h2 abt-h2--center" style="max-width: 784px;">Why Do Customers Continue Shopping After Leaving The Dealership?</h2>
+        <p class="abt-body abt-body--center">For years, the automotive industry has invested heavily in:</p>
+        <ul class="abt-invest">
+          <li><img src="images/about/icon-leads.svg" alt="" width="32" height="32" loading="lazy">Lead generation</li>
+          <li><img src="images/about/icon-marketing.svg" alt="" width="32" height="32" loading="lazy">Marketing</li>
+          <li><img src="images/about/icon-inventory.svg" alt="" width="32" height="32" loading="lazy">Inventory</li>
+          <li><img src="images/about/icon-technology.svg" alt="" width="32" height="32" loading="lazy">Technology</li>
+        </ul>
+      </div>
+
+      <hr class="abt-divider">
+
+      <div class="abt-story__grid">
+        <div class="abt-story__copy">
+          <h3 class="abt-h2">Yet one challenge continues to exist across dealerships of every size.<br>Customers continue shopping.</h3>
+          <div class="abt-story__even">
+            <p class="abt-body">Even after:</p>
+            <div class="abt-pillrow">
+              <span class="abt-topicpill"><i></i>Test drives</span>
+              <span class="abt-topicpill"><i></i>Pricing discussions</span>
+            </div>
+            <div class="abt-pillrow">
+              <span class="abt-topicpill"><i></i>Finance conversations</span>
+              <span class="abt-topicpill"><i></i>Positive dealership experiences</span>
+            </div>
+          </div>
+          <hr class="abt-divider">
+          <div class="abt-story__qa">
+            <p class="abt-story__qlabel">The question wasn't:</p>
+            <p class="abt-story__q">How do we generate more leads?</p>
+          </div>
+          <hr class="abt-divider">
+          <div class="abt-story__qa">
+            <p class="abt-story__qlabel">The question was:</p>
+            <p class="abt-story__q">Why do interested customers continue evaluating alternatives?</p>
+          </div>
+          <hr class="abt-divider">
+          <p class="abt-body">And what separates the dealerships that consistently earn customer confidence from those that struggle to maintain momentum?<br>This became the foundation of our research.</p>
+        </div>
+        <img class="abt-story__photo" src="images/about/family-choosing-car.jpg" alt="Family with their son choosing a car in a showroom" width="468" height="725" loading="lazy">
+      </div>
+
+      <div class="abt-journey" aria-hidden="true">
+        <div class="abt-journey__step" style="background: #83EAD6;">
+          <span class="abt-journey__circle"><img src="images/about/icon-step-car.svg" alt="" width="32" height="32" loading="lazy"></span>
+          <span class="abt-journey__label" style="color: #091520;">Dealership</span>
+        </div>
+        <img class="abt-journey__arrow" src="images/about/icon-arrow-teal.svg" alt="" width="72" height="72" loading="lazy">
+        <div class="abt-journey__step" style="background: #A78BFA;">
+          <span class="abt-journey__circle"><img src="images/about/icon-step-search.svg" alt="" width="32" height="32" loading="lazy"></span>
+          <span class="abt-journey__label">Research</span>
+        </div>
+        <img class="abt-journey__arrow" src="images/about/icon-arrow-violet.svg" alt="" width="72" height="72" loading="lazy">
+        <div class="abt-journey__step" style="background: #1E90FF;">
+          <span class="abt-journey__circle"><img src="images/about/icon-step-users.svg" alt="" width="32" height="32" loading="lazy"></span>
+          <span class="abt-journey__label">Competitors</span>
+        </div>
+        <img class="abt-journey__arrow" src="images/about/icon-arrow-blue.svg" alt="" width="72" height="72" loading="lazy">
+        <div class="abt-journey__step" style="background: #1E3A8A;">
+          <span class="abt-journey__circle"><img src="images/about/icon-step-decision.svg" alt="" width="32" height="32" loading="lazy"></span>
+          <span class="abt-journey__label">Decision</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ WHAT WE DISCOVERED -->
+  <section class="abt-split abt-split--paper abt-split--flip" aria-labelledby="abt-discovered-title">
+    <div class="abt-container abt-split__grid">
+      <img class="abt-split__photo" src="images/research/dealership-performance.jpg" alt="Dealership team reviewing research findings" width="483" height="663" loading="lazy">
+      <div class="abt-split__copy" style="width: 664px; gap: 19px;">
+        <p class="abt-pill abt-pill--white">WHAT WE DISCOVERED</p>
+        <h2 id="abt-discovered-title" class="abt-h2" style="max-width: 575px;">The Problem Was Rarely Product Or Price</h2>
+        <p class="abt-body">Our research revealed something surprising.<br>Customers were rarely continuing their search because they disliked the vehicle.<br>And they were rarely leaving because of price alone.<br>More commonly, they continued searching because:<br>Questions remained unanswered.<br>Confidence had not been fully established.<br>Alternative options still felt uncertain.<br>The buying journey was still unfolding.<br>Meanwhile, dealerships often had limited visibility into what happened next.</p>
+        <p class="abt-keyinsight">Key insight</p>
+        <div class="abt-insightcards">
+          <div class="abt-insightcard">
+            <img src="images/about/icon-customer.svg" alt="" width="32" height="32" loading="lazy">
+            <p>Customers don't buy when they find a vehicle</p>
+          </div>
+          <div class="abt-insightcard">
+            <img src="images/about/icon-thumbsup.svg" alt="" width="32" height="32" loading="lazy">
+            <p>They buy when they gain confidence in their decision</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ PHILOSOPHY -->
+  <section class="abt-philosophy" aria-labelledby="abt-philosophy-title">
+    <div class="abt-container abt-philosophy__inner">
+      <div class="abt-philosophy__grid">
+        <div class="abt-split__copy" style="width: 664px; gap: 19px;">
+          <p class="abt-pill">THE TRUSTDRIVER PHILOSOPHY</p>
+          <h2 id="abt-philosophy-title" class="abt-h2" style="max-width: 575px;">Better Customer Understanding Creates Better Customer Experiences</h2>
+          <p class="abt-body abt-body--tight" style="max-width: 567px;">The best salespeople consistently do a few things exceptionally well.<br>They ask better questions.<br>They listen more carefully.<br>They uncover what matters most.<br>They build trust.<br>They create confidence.<br>The challenge for dealerships is not identifying these behaviours.<br>The challenge is delivering them consistently across every salesperson, every customer and every interaction.</p>
+        </div>
+        <div class="abt-steps">
+          <div class="abt-step" style="background: #0F766E;">
+            <i class="abt-step__bar"></i>
+            <div class="abt-step__content">
+              <span class="abt-step__circle"><img src="images/about/icon-phil-understand.svg" alt="" width="32" height="32" loading="lazy"></span>
+              <span class="abt-step__label">Understand</span>
+            </div>
+          </div>
+          <div class="abt-step" style="background: #1D956F;">
+            <i class="abt-step__bar"></i>
+            <div class="abt-step__content">
+              <span class="abt-step__circle"><img src="images/about/icon-phil-trust.svg" alt="" width="32" height="32" loading="lazy"></span>
+              <span class="abt-step__label">Trust</span>
+            </div>
+          </div>
+          <div class="abt-step" style="background: #1E90FF;">
+            <i class="abt-step__bar"></i>
+            <div class="abt-step__content">
+              <span class="abt-step__circle"><img src="images/about/icon-phil-confidence.svg" alt="" width="32" height="32" loading="lazy"></span>
+              <span class="abt-step__label">Confidence</span>
+            </div>
+          </div>
+          <div class="abt-step" style="background: #1E3A8A;">
+            <i class="abt-step__bar"></i>
+            <div class="abt-step__content">
+              <span class="abt-step__circle"><img src="images/about/icon-phil-decision.svg" alt="" width="32" height="32" loading="lazy"></span>
+              <span class="abt-step__label">Decision</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="abt-principle">
+        <svg class="abt-principle__stripes abt-principle__stripes--left" viewBox="0 0 460.568 190.532" width="461" height="191" aria-hidden="true" focusable="false"><path d="M 323.978 190.532 L 443.235 0 L 460.568 0 L 341.312 190.532 L 323.978 190.532 Z M 278.264 190.532 L 397.52 0 L 428.327 0 L 309.072 190.532 L 278.264 190.532 Z M 204.723 190.532 L 323.978 0 L 377.644 0 L 258.388 190.532 L 204.723 190.532 Z M 132.176 190.532 L 251.431 0 L 305.097 0 L 185.838 190.532 L 132.176 190.532 Z M 0 190.532 L 119.256 0 L 232.549 0 L 113.293 190.532 L 0 190.532 Z" fill="#F9F9FF" fill-rule="nonzero"/></svg>
+        <svg class="abt-principle__stripes abt-principle__stripes--right" viewBox="0 0 460.568 190.532" width="461" height="191" aria-hidden="true" focusable="false"><path d="M 323.978 190.532 L 443.235 0 L 460.568 0 L 341.312 190.532 L 323.978 190.532 Z M 278.264 190.532 L 397.52 0 L 428.327 0 L 309.072 190.532 L 278.264 190.532 Z M 204.723 190.532 L 323.978 0 L 377.644 0 L 258.388 190.532 L 204.723 190.532 Z M 132.176 190.532 L 251.431 0 L 305.097 0 L 185.838 190.532 L 132.176 190.532 Z M 0 190.532 L 119.256 0 L 232.549 0 L 113.293 190.532 L 0 190.532 Z" fill="#F9F9FF" fill-rule="nonzero"/></svg>
+        <h3>TrustDriver was built around this principle.</h3>
+        <p style="max-width: 632px;">Helping dealerships create more consistent customer experiences by improving customer understanding, visibility and sales execution.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ DESIGNED AROUND HOW CUSTOMERS BUY -->
+  <section class="abt-split abt-split--paper" aria-labelledby="abt-designed-title">
+    <div class="abt-container abt-split__grid">
+      <div class="abt-split__copy" style="width: 664px; gap: 32px;">
+        <p class="abt-pill abt-pill--white">WHAT WE DISCOVERED</p>
+        <h2 id="abt-designed-title" class="abt-h2" style="max-width: 575px;">Designed Around How Customers Actually Buy</h2>
+        <p class="abt-body abt-body--semibold">TrustDriver was developed using insights drawn from:</p>
+        <ul class="abt-sources">
+          <li><img src="images/about/icon-chip-psych.svg" alt="" width="24" height="24" loading="lazy">Buyer psychology</li>
+          <li><img src="images/about/icon-chip-psych.svg" alt="" width="24" height="24" loading="lazy">Customer behaviour</li>
+          <li><img src="images/about/icon-chip-psych.svg" alt="" width="24" height="24" loading="lazy">Mystery shopper studies</li>
+          <li><img src="images/about/icon-chip-psych.svg" alt="" width="24" height="24" loading="lazy">Sales performance literature</li>
+          <li><img src="images/about/icon-chip-psych.svg" alt="" width="24" height="24" loading="lazy">Automotive retail observations</li>
+          <li><img src="images/about/icon-chip-psych.svg" alt="" width="24" height="24" loading="lazy">Real-world dealership experiences</li>
+        </ul>
+        <p class="abt-body abt-body--tight" style="max-width: 484px;">Rather than building software and searching for a problem, we started with the customer journey and worked backwards.<br>The result is a platform designed around the behaviours that influence customer confidence and buying decisions.</p>
+        <div class="abt-builtcards">
+          <div class="abt-builtcard"><img src="images/about/icon-info-desk.svg" alt="" width="24" height="24" loading="lazy"><p>Built around customer behaviour</p></div>
+          <div class="abt-builtcard"><img src="images/about/icon-software.svg" alt="" width="24" height="24" loading="lazy"><p>Not software features</p></div>
+        </div>
+      </div>
+      <div class="abt-split__photobox">
+        <img src="images/about/team-working.jpg" alt="TrustDriver team collaborating in the office" width="1120" height="783" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ OUR VISION -->
+  <section class="abt-vision" aria-labelledby="abt-vision-title">
+    <div class="abt-container abt-vision__grid">
+      <div class="abt-vision__visual" aria-hidden="true">
+        <svg viewBox="0 0 664.485 590" width="664" height="590" role="presentation" focusable="false">
+          <defs>
+            <clipPath id="abt-vision-clip"><path d="M 615.481 195.335 C 646.26 236.527 664.485 287.646 664.485 343.022 C 664.485 479.424 553.91 589.999 417.509 589.999 C 330.617 589.999 254.207 545.127 210.185 477.292 L 0 477.292 L 0 0 L 615.481 0 L 615.481 195.335 Z"/></clipPath>
+          </defs>
+          <g transform="matrix(-1 0 0 1 494 297.919)"><path d="M 494 44.626 L 494.485 44.626 C 494.485 77.059 488.097 109.175 475.686 139.14 C 463.274 169.104 445.081 196.331 422.147 219.265 C 399.214 242.199 371.987 260.391 342.022 272.803 C 312.058 285.214 279.942 291.603 247.509 291.603 C 215.075 291.603 182.96 285.214 152.995 272.803 C 123.031 260.391 95.804 242.199 72.87 219.265 C 49.936 196.331 31.744 169.104 19.332 139.14 C 6.968 109.29 0.582 77.306 0.533 45 L 0 45 L 0 0 L 494 0 L 494 44.626 Z" fill="#1E90FF"/></g>
+          <g transform="matrix(-1 0 0 1 664 -0.477)" clip-path="url(#abt-vision-clip)">
+            <image href="images/about/vision-businesswoman.png" x="-52.924" y="-52.924" width="974.186" height="647.824" preserveAspectRatio="xMidYMid slice"/>
+          </g>
+        </svg>
+      </div>
+      <div class="abt-split__copy" style="width: 585px; gap: 21px;">
+        <p class="abt-pill">our vision</p>
+        <h2 id="abt-vision-title" class="abt-h2">The Future Of Automotive Retail Is Better Customer Understanding</h2>
+        <p class="abt-body">As products become more comparable and customer expectations continue to rise, customer experience is becoming one of the most important differentiators available to dealerships.</p>
+        <p class="abt-body abt-body--bold">We believe the dealerships that succeed over the next decade will be those that:</p>
+        <ul class="abt-visionlist">
+          <li><i></i>Understand customers better</li>
+          <li><i></i>Create more consistent experiences</li>
+          <li><i></i>Provide more valuable guidance</li>
+          <li><i></i>Build confidence more effectively</li>
+          <li><i></i>And create systems that help every salesperson perform at a higher level</li>
+        </ul>
+        <p class="abt-vision__closing">That future is what TrustDriver is helping build.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ WHO WE WORK WITH -->
+  <section class="abt-who" aria-labelledby="abt-who-title">
+    <div class="abt-container abt-who__inner">
+      <div class="abt-sectionhead">
+        <p class="abt-pill">who we work with</p>
+        <h2 id="abt-who-title" class="abt-h2 abt-h2--center" style="max-width: 535px;">Built For Automotive Retail</h2>
+        <p class="abt-body abt-body--center">TrustDriver is designed specifically for:</p>
+      </div>
+      <ul class="abt-who__grid">
+        <li class="abt-whocard"><span class="abt-whocard__icon"><img src="images/about/icon-work-dp.svg" alt="" width="24" height="24" loading="lazy"></span><h3>Dealer Principals</h3></li>
+        <li class="abt-whocard"><span class="abt-whocard__icon"><img src="images/about/icon-work-gm.svg" alt="" width="24" height="24" loading="lazy"></span><h3>General Managers</h3></li>
+        <li class="abt-whocard"><span class="abt-whocard__icon"><img src="images/about/icon-work-sm.svg" alt="" width="24" height="24" loading="lazy"></span><h3>Sales Managers</h3></li>
+        <li class="abt-whocard"><span class="abt-whocard__icon"><img src="images/about/icon-work-sc.svg" alt="" width="24" height="24" loading="lazy"></span><h3>Sales Consultants</h3></li>
+        <li class="abt-whocard"><span class="abt-whocard__icon"><img src="images/about/icon-work-dg.svg" alt="" width="24" height="24" loading="lazy"></span><h3>Dealer Groups</h3></li>
+        <li class="abt-whocard"><span class="abt-whocard__icon"><img src="images/about/icon-work-aro.svg" alt="" width="24" height="24" loading="lazy"></span><h3>Automotive Retail Organisations</h3></li>
+      </ul>
+      <p class="abt-who__closing" style="max-width: 970px;">We focus on one industry because we believe customer experience challenges are best solved by deeply understanding the environment in which they occur.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================ DEALER GROUP DASHBOARD (product illustration) -->
+  <section class="abt-dashsection">
+    <div class="abt-dash-wrap">
+      <figure class="abt-dash" data-scale-width="1152" aria-hidden="true">
+        <div class="abt-dash__topbar">
+          <div class="abt-tdlogo"><span class="abt-tdlogo__left"></span><span class="abt-tdlogo__right"></span></div>
+          <span class="abt-dash__datechip">Jun 2026
+            <svg viewBox="0 0 7.2 3.6" width="8" height="4" aria-hidden="true" focusable="false"><path d="M 3.6 3.6 L 3.317 3.883 L 3.6 4.166 L 3.883 3.883 L 3.6 3.6 Z M 0 0 L -0.283 0.283 L 3.317 3.883 L 3.6 3.6 L 3.883 3.317 L 0.283 -0.283 L 0 0 Z M 3.6 3.6 L 3.883 3.883 L 7.483 0.283 L 7.2 0 L 6.917 -0.283 L 3.317 3.317 L 3.6 3.6 Z" fill="currentColor" fill-rule="nonzero"/></svg>
+          </span>
+        </div>
+        <div class="abt-dash__heading">
+          <p class="abt-dash__title">Dealer Group Performance Overview</p>
+          <p class="abt-dash__subtitle">Compare performance across locations and identify opportunities for improvement.</p>
+        </div>
+        <div class="abt-dash__kpis">
+          <div class="abt-kpi" style="--kpi-accent: #1E90FF;">
+            <div class="abt-kpi__main">
+              <span class="abt-kpi__icon" style="background: #E0EEFF; color: #1E90FF;"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path transform="translate(1.333 1.333)" d="M 6.667 0 L 8.727 4.173 L 13.333 4.847 L 10 8.093 L 10.787 12.68 L 6.667 10.513 L 2.547 12.68 L 3.333 8.093 L 0 4.847 L 4.607 4.173 L 6.667 0 Z" fill="currentColor" fill-rule="nonzero"/></svg></span>
+              <span class="abt-kpi__figures"><span class="abt-kpi__value">84</span><span class="abt-kpi__label">Customer Experience Score</span></span>
+            </div>
+            <span class="abt-kpi__foot">Group Average</span>
+          </div>
+          <div class="abt-kpi" style="--kpi-accent: #1EB464;">
+            <div class="abt-kpi__main">
+              <span class="abt-kpi__icon" style="background: #E1F6EA; color: #1EB464;"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path transform="translate(2 0.667)" d="M 6 0 L 0 2.667 L 0 6.667 C 0 10.367 2.56 13.827 6 14.667 C 9.44 13.827 12 10.367 12 6.667 L 12 2.667 L 6 0 Z M 4.667 10.667 L 2 8 L 2.94 7.06 L 4.667 8.78 L 9.06 4.387 L 10 5.333 L 4.667 10.667 Z" fill="currentColor" fill-rule="nonzero"/></svg></span>
+              <span class="abt-kpi__figures"><span class="abt-kpi__value">81</span><span class="abt-kpi__label">Buyer Confidence Score</span></span>
+            </div>
+            <span class="abt-kpi__foot">Group Average</span>
+          </div>
+          <div class="abt-kpi" style="--kpi-accent: #7E50ED;">
+            <div class="abt-kpi__main">
+              <span class="abt-kpi__icon" style="background: #EAE4FE; color: #7E50ED;"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path transform="translate(1.333 4)" d="M 9.333 0 L 10.86 1.527 L 7.607 4.78 L 4.94 2.113 L 0 7.06 L 0.94 8 L 4.94 4 L 7.607 6.667 L 11.807 2.473 L 13.333 4 L 13.333 0 L 9.333 0 Z" fill="currentColor" fill-rule="nonzero"/></svg></span>
+              <span class="abt-kpi__figures"><span class="abt-kpi__value">High</span><span class="abt-kpi__label">Forecast Confidence</span></span>
+              <span class="abt-kpi__badge" style="background: #E1F6EA; color: #1EB464;">STRONG</span>
+            </div>
+            <span class="abt-kpi__foot">Overall Outlook</span>
+          </div>
+          <div class="abt-kpi" style="--kpi-accent: #F08018;">
+            <div class="abt-kpi__main">
+              <span class="abt-kpi__icon abt-kpi__icon--round" style="background: #FEEDE0; color: #F08018;"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path transform="translate(0.667 1.333)" d="M 0 12.667 L 14.667 12.667 L 7.333 0 L 0 12.667 Z M 8 10.667 L 6.667 10.667 L 6.667 9.333 L 8 9.333 L 8 10.667 Z M 8 8 L 6.667 8 L 6.667 5.333 L 8 5.333 L 8 8 Z" fill="currentColor" fill-rule="nonzero"/></svg></span>
+              <span class="abt-kpi__figures"><span class="abt-kpi__value">12%</span><span class="abt-kpi__label">Opportunity Leakage</span></span>
+              <span class="abt-kpi__badge" style="background: #FEEDE0; color: #F08018;">ACTION</span>
+            </div>
+            <span class="abt-kpi__foot">Requires Attention</span>
+          </div>
+        </div>
+        <div class="abt-dash__panels">
+          <div class="abt-dash__table-panel">
+            <p class="abt-dash__panel-title">Dealership Comparison</p>
+            <div class="abt-dash__table">
+              <div class="abt-dash__thead">
+                <span style="left: 16px;">DEALERSHIP</span>
+                <span style="left: 136px;">CUST. EXPERIENCE</span>
+                <span style="left: 249.6px;">BUYER CONFIDENCE</span>
+                <span style="left: 388.8px; width: 52px; text-align: center;">OPP. LEAKAGE</span>
+                <span style="left: 473.6px;">SALES CONSISTENCY</span>
+                <span style="left: 606.4px; width: 38px; text-align: center;">FORECAST</span>
+              </div>
+              <div class="abt-dash__row abt-dash__row--alt">
+                <span class="abt-dash__dealer"><span class="abt-dash__rank" style="background: #FFEFB4; color: #97730F;">1</span>Brighton</span>
+                <span class="abt-dash__bar" style="left: 136px; --bar-w: 58.24px; --bar-c: #1EB464;"><i></i><b>91</b></span>
+                <span class="abt-dash__bar" style="left: 249.6px; --bar-w: 56.96px; --bar-c: #1EB464;"><i></i><b>89</b></span>
+                <span class="abt-dash__leak" style="left: 402.4px;">8%</span>
+                <span class="abt-dash__bar" style="left: 473.6px; --bar-w: 58.88px; --bar-c: #1EB464;"><i></i><b>92</b></span>
+                <span class="abt-dash__forecast" style="--fc: #1EB464; background: #E1F6EA;"><i></i>High</span>
+              </div>
+              <div class="abt-dash__row">
+                <span class="abt-dash__dealer"><span class="abt-dash__rank" style="background: #EBEDF0; color: #5F6777;">2</span>Bayside</span>
+                <span class="abt-dash__bar" style="left: 136px; --bar-w: 53.76px; --bar-c: #1E90FF;"><i></i><b>84</b></span>
+                <span class="abt-dash__bar" style="left: 249.6px; --bar-w: 52.48px; --bar-c: #1E90FF;"><i></i><b>82</b></span>
+                <span class="abt-dash__leak" style="left: 400.8px;">11%</span>
+                <span class="abt-dash__bar" style="left: 473.6px; --bar-w: 55.04px; --bar-c: #1EB464;"><i></i><b>86</b></span>
+                <span class="abt-dash__forecast" style="--fc: #1EB464; background: #E1F6EA;"><i></i>High</span>
+              </div>
+              <div class="abt-dash__row abt-dash__row--alt">
+                <span class="abt-dash__dealer"><span class="abt-dash__rank" style="background: #FEECE1; color: #9B5414;">3</span>Moorabbin</span>
+                <span class="abt-dash__bar" style="left: 136px; --bar-w: 49.92px; --bar-c: #1E90FF;"><i></i><b>78</b></span>
+                <span class="abt-dash__bar" style="left: 249.6px; --bar-w: 48.64px; --bar-c: #1E90FF;"><i></i><b>76</b></span>
+                <span class="abt-dash__leak" style="left: 400px;">18%</span>
+                <span class="abt-dash__bar" style="left: 473.6px; --bar-w: 47.36px; --bar-c: #F08018;"><i></i><b>74</b></span>
+                <span class="abt-dash__forecast" style="--fc: #F08018; background: #FEEDE0; left: 598.4px;"><i></i>Medium</span>
+              </div>
+              <div class="abt-dash__row">
+                <span class="abt-dash__dealer"><span class="abt-dash__rank" style="background: #FEE1E1; color: #E63C3C;">4</span>Frankston</span>
+                <span class="abt-dash__bar" style="left: 136px; --bar-w: 45.44px; --bar-c: #F08018;"><i></i><b>71</b></span>
+                <span class="abt-dash__bar" style="left: 249.6px; --bar-w: 44.16px; --bar-c: #F08018;"><i></i><b>69</b></span>
+                <span class="abt-dash__leak" style="left: 399.2px;">24%</span>
+                <span class="abt-dash__bar" style="left: 473.6px; --bar-w: 43.52px; --bar-c: #F08018;"><i></i><b>68</b></span>
+                <span class="abt-dash__forecast" style="--fc: #F08018; background: #FEEDE0; left: 597.6px;"><i></i>Medium</span>
+              </div>
+            </div>
+          </div>
+          <div class="abt-dash__insights">
+            <p class="abt-dash__panel-title abt-dash__panel-title--boxed">Key insights</p>
+            <div class="abt-insight" style="--ins: #1EB464;">
+              <span class="abt-insight__icon" style="background: #E1F6EA;"><svg viewBox="0 0 14.4 14.4" width="14" height="14" aria-hidden="true" focusable="false"><path transform="translate(1.2 1.2)" d="M 6 0 L 7.854 3.756 L 12 4.362 L 9 7.284 L 9.708 11.412 L 6 9.462 L 2.292 11.412 L 3 7.284 L 0 4.362 L 4.146 3.756 L 6 0 Z" fill="currentColor" fill-rule="nonzero"/></svg></span>
+              <span class="abt-insight__text"><b class="abt-insight__tag">TOP PERFORMING</b><b class="abt-insight__name">Brighton</b><span class="abt-insight__desc">Highest scores across all metrics</span></span>
+            </div>
+            <div class="abt-insight" style="--ins: #1E90FF;">
+              <span class="abt-insight__icon" style="background: #E0EEFF;"><svg viewBox="0 0 14.4 14.4" width="14" height="14" aria-hidden="true" focusable="false"><path transform="translate(1.2 1.23)" d="M 6.6 0 L 6.6 1.212 C 8.97 1.506 10.8 3.522 10.8 5.97 C 10.8 7.896 9.714 9.57 7.968 10.602 L 6.6 8.97 L 6.6 11.97 L 9.6 11.97 L 8.868 11.238 C 10.746 10.212 12 8.226 12 5.97 C 12 2.862 9.636 0.3 6.6 0 Z M 5.4 0 C 2.37 0.3 0 2.862 0 5.97 C 0 8.226 1.254 10.212 3.132 11.238 L 2.4 11.97 L 5.4 11.97 L 5.4 0 Z" fill="currentColor" fill-rule="nonzero"/></svg></span>
+              <span class="abt-insight__text"><b class="abt-insight__tag">GREATEST OPPORTUNITY</b><b class="abt-insight__name">Frankston</b><span class="abt-insight__desc">Largest gap to group average</span></span>
+            </div>
+            <div class="abt-insight" style="--ins: #F08018;">
+              <span class="abt-insight__icon" style="background: #FEEDE0;"><svg viewBox="0 0 14.4 14.4" width="14" height="14" aria-hidden="true" focusable="false"><path transform="translate(1.2 3.6)" d="M 8.4 0 L 9.774 1.374 L 6.846 4.302 L 4.446 1.902 L 0 6.354 L 0.846 7.2 L 4.446 3.6 L 6.846 6 L 10.626 2.226 L 12 3.6 L 12 0 L 8.4 0 Z" fill="currentColor" fill-rule="nonzero"/></svg></span>
+              <span class="abt-insight__text"><b class="abt-insight__tag">LARGEST IMPROVEMENT</b><b class="abt-insight__name">Bayside</b><span class="abt-insight__desc">Most improved since last period</span></span>
+            </div>
+            <div class="abt-insight" style="--ins: #E63C3C;">
+              <span class="abt-insight__icon" style="background: #FEE1E1;"><svg viewBox="0 0 14.4 14.4" width="14" height="14" aria-hidden="true" focusable="false"><path transform="translate(1.2 1.2)" d="M 6 0 C 2.688 0 0 2.688 0 6 C 0 9.312 2.688 12 6 12 C 9.312 12 12 9.312 12 6 C 12 2.688 9.312 0 6 0 Z M 6.6 9 L 5.4 9 L 5.4 7.8 L 6.6 7.8 L 6.6 9 Z M 6.6 6.6 L 5.4 6.6 L 5.4 3 L 6.6 3 L 6.6 6.6 Z" fill="currentColor" fill-rule="nonzero"/></svg></span>
+              <span class="abt-insight__text"><b class="abt-insight__tag">ATTENTION REQUIRED</b><b class="abt-insight__name">Moorabbin</b><span class="abt-insight__desc">Below threshold on key indicators</span></span>
+            </div>
+          </div>
+        </div>
+        <div class="abt-dash__banner">
+          <p class="abt-dash__banner-text">Identify performance gaps, benchmark locations and understand where leadership attention will have the greatest impact.</p>
+          <span class="abt-dash__banner-btn">See How TrustDriver Helps</span>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============================================================ TRUSTDRIVER RESEARCH -->
+  <section class="abt-research" aria-labelledby="abt-research-title">
+    <div class="abt-container abt-research__grid">
+      <div class="abt-research__copy">
+        <p class="abt-pill abt-pill--white">TRUSTDRIVER RESEARCH</p>
+        <h2 id="abt-research-title" class="abt-h2">Explore Our Latest Research</h2>
+        <p class="abt-body">Access original research, benchmark reports and customer behaviour insights designed specifically for automotive leaders.</p>
+        <div class="abt-research__actions">
+          <a class="abt-btn abt-btn--primary" href="#">Download Mystery Shopper Study</a>
+          <div class="abt-research__actions-row">
+            <a class="abt-btn abt-btn--white-ink" href="#">Start Benchmark</a>
+            <a class="abt-btn abt-btn--white-ink" href="research-insights.html">Explore Research</a>
+          </div>
+        </div>
+      </div>
+      <img class="abt-research__art" src="images/about/research-illustration.svg" alt="" width="522" height="478" loading="lazy">
+    </div>
+  </section>
+
+  <!-- ============================================================ CLOSING CTA -->
+  <section class="abt-cta" aria-labelledby="abt-cta-title">
+    <svg class="abt-cta__stripes" viewBox="0 0 938.568 388.276" width="939" height="388" aria-hidden="true" focusable="false"><path d="M 660.219 388.276 L 903.245 0 L 938.568 0 L 695.542 388.276 L 660.219 388.276 Z M 567.059 388.276 L 810.085 0 L 872.866 0 L 629.841 388.276 L 567.059 388.276 Z M 417.194 388.276 L 660.219 0 L 769.58 0 L 526.556 388.276 L 417.194 388.276 Z M 269.354 388.276 L 512.379 0 L 621.741 0 L 378.71 388.276 L 269.354 388.276 Z M 0 388.276 L 243.025 0 L 473.9 0 L 230.874 388.276 L 0 388.276 Z" fill="#F9F9FF" fill-rule="nonzero"/></svg>
+    <img class="abt-cta__img" src="images/about/cta-dashboard.png" alt="" width="1058" height="698" loading="lazy">
+    <div class="abt-cta__content">
+      <h2 id="abt-cta-title" class="abt-h2 abt-h2--white" style="max-width: 562px;">Discover How Your Dealership Compares</h2>
+      <p class="abt-body abt-body--white">Complete the TrustDriver Customer Experience Benchmark and receive a complimentary assessment based on our latest research findings.</p>
+      <div class="abt-cta__actions">
+        <a class="abt-btn abt-btn--white-ink" href="#">Start Benchmark</a>
+        <a class="abt-btn abt-btn--ghost" href="#">Book Customer Experience Benchmark Review</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- @include:footer -->
+<footer class="s-footer">
+  <div class="foot__top">
+    <div class="foot__brand">
+      <a href="index.html" aria-label="TrustDriver home"><img class="foot__logo" src="images/logo.png" alt="TrustDriver" width="196" height="28"></a>
+      <p>TrustDriver helps dealerships create more confident buyers by helping salespeople understand customers better, deliver more valuable experiences, and guide opportunities more effectively throughout the buying journey.</p>
+      <div class="foot__social">
+        <a href="#" aria-label="TrustDriver on Facebook"><img src="images/icons/social-facebook.svg" alt="" width="18" height="18"></a>
+        <a href="#" aria-label="TrustDriver on Twitter"><img src="images/icons/social-twitter.svg" alt="" width="18" height="18"></a>
+        <a href="#" aria-label="TrustDriver on Instagram"><img src="images/icons/social-instagram.svg" alt="" width="18" height="18"></a>
+        <a href="#" aria-label="TrustDriver on LinkedIn"><img src="images/icons/social-linkedin.svg" alt="" width="18" height="18"></a>
+        <a href="#" aria-label="TrustDriver on YouTube"><img src="images/icons/social-youtube.svg" alt="" width="18" height="18"></a>
+      </div>
+    </div>
+    <div class="foot__cols">
+      <nav class="foot__col" aria-label="Product">
+        <h4>Product</h4>
+        <a href="index.html">Home</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="#">CX Benchmark</a>
+        <a href="pilot-program.html">Pilot Program</a>
+        <a href="platform.html">Platform</a>
+      </nav>
+      <nav class="foot__col" aria-label="Company">
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="#">Contact us</a>
+        <a href="#">Careers</a>
+        <a href="research-insights.html">Research &amp; Insights</a>
+        <a href="#">Updates</a>
+      </nav>
+      <div class="foot__col">
+        <h4>Contacts us</h4>
+        <div class="foot__contact">
+          <a class="row" href="mailto:contact@company.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            contact@company.com
+          </a>
+          <a class="row" href="tel:+14146875892">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (414) 687 - 5892
+          </a>
+          <div class="row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>794 Mcallister St<br>San Francisco, 94102</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot__bar">
+    <span>Copyright &copy; 2026 TrustDriver</span>
+    <span>All Rights Reserved | <a href="#">Terms and Conditions</a> | <a href="#">Privacy Policy</a></span>
+  </div>
+</footer>
+<!-- @endinclude:footer -->
+
+</body>
+</html>
