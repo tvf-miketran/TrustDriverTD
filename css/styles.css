@@ -38,8 +38,9 @@ p { margin: 0; }
   width: var(--page-w);
   margin: 0 auto;
   position: relative;
-  /* scaled down by js/fit-page.js when the window is narrower than 1440,
-     so desktop/preview windows never get a horizontal scrollbar */
+  /* zoomed by js/fit-page.js so the 1440 canvas always fills the viewport
+     width — down on narrow windows (no horizontal scrollbar), up on wide
+     monitors (no white gutters) */
   zoom: var(--page-scale, 1);
   /* clip (not hidden): clips the bleeding 1440px Figma layers on the X
      axis WITHOUT creating a scroll container — which would break the
@@ -124,13 +125,10 @@ p { margin: 0; }
 .nav__links a { color: inherit; text-decoration: none; }
 .nav__links a:hover { color: var(--accent); }
 
-/* On the scaled homepage canvas, counter-zoom the sticky nav so the header
-   renders at the same 1:1 size as on the fluid subpages. */
-.page > .nav { zoom: calc(1 / var(--page-scale, 1)); }
-
-/* Stamped header on fluid subpages: tighten first, then collapse into a
-   deliberate two-row layout (brand + CTA on top, links below).
-   The homepage is a fixed 1440 canvas, so these only affect subpages. */
+/* The stamped header sits OUTSIDE the homepage's zoomed .page canvas (direct
+   child of <body>, same as the subpages), so it is always fluid/full-width
+   and never scaled. Tighten first, then collapse into a deliberate two-row
+   layout (brand + CTA on top, links below). */
 @media (max-width: 1280px) {
   .nav { padding: 18px clamp(24px, 4vw, 60px); column-gap: 16px; }
   .nav__links { gap: 18px; font-size: 13px; }

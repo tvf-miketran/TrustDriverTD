@@ -12,14 +12,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/styles.css?v=27" />
-  <script src="js/fit-page.js" defer></script>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/fit-page.js?v=2" defer></script>
 </head>
 <body>
-  <div class="page">
-
-    <!-- ===================== NAV (1:12) — from partials/header.html ===================== -->
-    <!-- @include:header -->
+  <!-- ===================== NAV (1:12) — from partials/header.html =====================
+       Kept OUTSIDE .page so it stays fluid/full-width like the subpages
+       (inside the zoomed canvas it gets boxed to 1440 on wide screens). -->
+  <!-- @include:header -->
 <header class="nav">
   <div class="nav__brand">
     <a href="index.html" class="nav__logo" aria-label="TrustDriver home">
@@ -38,6 +38,8 @@
   <a href="#" class="btn btn--primary-sm">Book Benchmark</a><!-- TODO(@yvan): wire booking destination -->
 </header>
 <!-- @endinclude:header -->
+
+  <div class="page">
 
     <main>
 
@@ -336,9 +338,11 @@
     </section>
 
     </main>
+  </div>
 
-    <!-- ============== FOOTER — from partials/footer.html ============== -->
-    <!-- @include:footer -->
+  <!-- ============== FOOTER — from partials/footer.html ==============
+       Outside .page for the same reason as the header. -->
+  <!-- @include:footer -->
 <footer class="s-footer">
   <div class="foot__top">
     <div class="foot__brand">
@@ -394,6 +398,5 @@
   </div>
 </footer>
 <!-- @endinclude:footer -->
-  </div>
 </body>
 </html>
