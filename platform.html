@@ -62,7 +62,7 @@
 <header class="nav">
   <div class="nav__brand">
     <a href="index.html" class="nav__logo" aria-label="TrustDriver home">
-      <img src="images/logo.png" alt="TrustDriver" width="168" height="24">
+      <img src="images/icons/TDLogo.svg" alt="TrustDriver" width="162" height="24">
     </a>
   </div>
   <nav class="nav__links" aria-label="Primary">
@@ -99,12 +99,13 @@
     <div class="pf-dash-wrap">
       <figure class="pf-dash" data-scale-width="1018" aria-hidden="true">
         <div class="pf-dash__chrome">
-          <span class="pf-tdlogo"><i class="pf-tdlogo__left"></i><i class="pf-tdlogo__right"></i></span>
+          <!-- white-Trust variant of TDLogo.svg (white fill masked onto the wordmark) for the dark chrome -->
+          <img class="pf-dash__logo" src="images/icons/TDLogo-white.svg" alt="TrustDriver" width="108" height="15">
         </div>
         <div class="pf-dash__body">
           <div class="pf-dash__kpis">
             <div class="pf-kpicard">
-              <div class="pf-kpicard__top"><span>Active Customers</span><b class="pf-trendchip">▲ +8%</b></div>
+              <div class="pf-kpicard__top"><span>Active Customers</span><b class="pf-trendchip"><img src="images/icons/arrow-up-right.svg" alt="" width="14" height="14">+8%</b></div>
               <b class="pf-kpicard__value">1,284</b>
             </div>
             <div class="pf-kpicard">
@@ -112,7 +113,7 @@
               <b class="pf-kpicard__value">12</b>
             </div>
             <div class="pf-kpicard">
-              <div class="pf-kpicard__top"><span>Pipeline Value</span><b class="pf-trendchip">▲ +12%</b></div>
+              <div class="pf-kpicard__top"><span>Pipeline Value</span><b class="pf-trendchip"><img src="images/icons/arrow-up-right.svg" alt="" width="14" height="14">+12%</b></div>
               <b class="pf-kpicard__value">$2.4M</b>
             </div>
           </div>
@@ -129,7 +130,7 @@
               <div class="pf-panel__head"><b>Customer Profile</b><span class="pf-bluechip">CRM</span></div>
               <div class="pf-profilebox">
                 <div class="pf-profilebox__id"><span class="pf-avatar">JL</span><span class="pf-profilebox__who"><b>Jordan Lee</b><i>jordan.lee@email.com</i></span></div>
-                <p class="pf-profilebox__phone">(555) 123-4567</p>
+                <p class="pf-profilebox__phone"><img src="images/icons/phone.svg" alt="" width="12" height="12" loading="lazy"><span>(555) 123-4567</span></p>
                 <p class="pf-profilebox__evt"><i class="pf-dot"></i>Test drive • Today</p>
                 <p class="pf-profilebox__evt pf-profilebox__evt--muted"><i class="pf-dot pf-dot--muted"></i>Follow-up • Tomorrow</p>
               </div>
@@ -139,7 +140,9 @@
             <div class="pf-panel">
               <div class="pf-panel__head"><b>Meeting Intelligence</b><span class="pf-bluechip">AI</span></div>
               <div class="pf-quote"><span class="pf-numdot" style="background: rgba(30,144,255,0.1); color: #1E90FF;">A</span>"We need to confirm the trade-in value and review financing options."</div>
-              <div class="pf-quote"><span class="pf-numdot" style="background: #F0F3F6; color: #091520;">B</span>"I can run the numbers. Let me check availability."</div>
+              <div class="pf-quote pf-quote--reply">
+                "I can run the numbers. Let me check availability."
+              </div>
               <div class="pf-wave pf-wave--sm" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
             </div>
             <div class="pf-panel">
@@ -188,13 +191,13 @@
         <div class="pf-diffvisual__dark">
           <div class="pf-diffvisual__darkhead"><span>Activity Reporting</span><i>View all</i></div>
           <hr>
-          <div class="pf-activityrow"><span class="pf-activityicon" style="background: #10B981;"></span><span class="pf-activitytext"><b>Called John M.</b><i>9:12 AM</i></span></div>
-          <div class="pf-activityrow"><span class="pf-activityicon" style="background: #3B82F6;"></span><span class="pf-activitytext"><b>Sent email - Ford F-150</b><i>9:18 AM</i></span></div>
-          <div class="pf-activityrow"><span class="pf-activityicon" style="background: #8B5CF6;"></span><span class="pf-activitytext"><b>Updated pipeline</b><i>9:22 AM</i></span></div>
-          <div class="pf-activityrow"><span class="pf-activityicon" style="background: #F97316;"></span><span class="pf-activitytext"><b>Booked test drive</b><i>9:31 AM</i></span></div>
-          <div class="pf-activityrow"><span class="pf-activityicon" style="background: #FBBF24;"></span><span class="pf-activitytext"><b>Created follow-up task</b><i>9:42 AM</i></span></div>
-          <div class="pf-activityrow"><span class="pf-activityicon" style="background: #14B8A6;"></span><span class="pf-activitytext"><b>Logged meeting notes</b><i>9:55 AM</i></span></div>
-          <div class="pf-activityrow"><span class="pf-activityicon" style="background: #6366F1;"></span><span class="pf-activitytext"><b>Updated opportunity</b><i>10:08 AM</i></span></div>
+          <div class="pf-activityrow"><span class="pf-activityicon" style="background: #10B981;"><img src="images/icons/phone.svg" alt="" width="14" height="14"></span><span class="pf-activitytext"><b>Called John M.</b><i>9:12 AM</i></span></div>
+          <div class="pf-activityrow"><span class="pf-activityicon" style="background: #3B82F6;"><img src="images/icons/mail.svg" alt="" width="16" height="16"></span><span class="pf-activitytext"><b>Sent email - Ford F-150</b><i>9:18 AM</i></span></div>
+          <div class="pf-activityrow"><span class="pf-activityicon" style="background: #8B5CF6;"><img src="images/icons/funnel.svg" alt="" width="16" height="16"></span><span class="pf-activitytext"><b>Updated pipeline</b><i>9:22 AM</i></span></div>
+          <div class="pf-activityrow"><span class="pf-activityicon" style="background: #F97316;"><img src="images/icons/car.svg" alt="" width="16" height="16"></span><span class="pf-activitytext"><b>Booked test drive</b><i>9:31 AM</i></span></div>
+          <div class="pf-activityrow"><span class="pf-activityicon" style="background: #FBBF24;"><img src="images/icons/check.svg" alt="" width="16" height="16"></span><span class="pf-activitytext"><b>Created follow-up task</b><i>9:42 AM</i></span></div>
+          <div class="pf-activityrow"><span class="pf-activityicon" style="background: #14B8A6;"><img src="images/icons/file-text.svg" alt="" width="16" height="16"></span><span class="pf-activitytext"><b>Logged meeting notes</b><i>9:55 AM</i></span></div>
+          <div class="pf-activityrow"><span class="pf-activityicon" style="background: #6366F1;"><img src="images/icons/star.svg" alt="" width="16" height="16"></span><span class="pf-activitytext"><b>Updated opportunity</b><i>10:08 AM</i></span></div>
         </div>
         <div class="pf-diffvisual__light">
           <div class="pf-diffvisual__lighthead">Customer Intelligence</div>
@@ -214,14 +217,14 @@
       <figure class="pf-micards" aria-hidden="true">
         <div class="pf-micard">
           <div class="pf-micard__head">
-            <span class="pf-micard__title"><i class="pf-iconbox"><svg viewBox="0 0 18 18" width="18" height="18" aria-hidden="true" focusable="false"><rect x="6" y="1.5" width="6" height="10" rx="3" fill="#1E90FF"/><path d="M 4 8 a 5 5 0 0 0 10 0 M 9 13 v 3" stroke="#1E90FF" stroke-width="1.5" fill="none"/></svg></i>Meeting Capture</span>
+            <span class="pf-micard__title"><i class="pf-iconbox"><img src="images/icons/mic.svg" alt="" width="18" height="18" loading="lazy"></i>Meeting Capture</span>
             <span class="pf-statuschip"><i class="pf-dot"></i>Live</span>
           </div>
           <div class="pf-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
         </div>
         <div class="pf-micard">
           <div class="pf-micard__head">
-            <span class="pf-micard__title"><i class="pf-iconbox"><img src="images/research/icon-sparkles.svg" alt="" width="18" height="18" loading="lazy"></i>AI Summary</span>
+            <span class="pf-micard__title"><i class="pf-iconbox"><img src="images/icons/sparkles.svg" alt="" width="18" height="18" loading="lazy"></i>AI Summary</span>
             <span class="pf-statuschip"><i class="pf-dot"></i>Insights</span>
           </div>
           <div class="pf-tagrow">
@@ -233,7 +236,7 @@
         </div>
         <div class="pf-micard">
           <div class="pf-micard__head">
-            <span class="pf-micard__title"><i class="pf-iconbox"><svg viewBox="0 0 18 18" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="9" cy="5.5" r="3" stroke="#1E90FF" stroke-width="1.5" fill="none"/><path d="M 3.5 15.5 a 5.5 5.5 0 0 1 11 0" stroke="#1E90FF" stroke-width="1.5" fill="none"/></svg></i>Customer Profile</span>
+            <span class="pf-micard__title"><i class="pf-iconbox"><img src="images/icons/customer-profile.svg" alt="" width="18" height="18" loading="lazy"></i>Customer Profile</span>
             <span class="pf-statuschip"><i class="pf-dot"></i>Updated</span>
           </div>
           <div class="pf-profilecard">
@@ -283,21 +286,21 @@
         <div class="pf-profilevisual__body">
           <div class="pf-pvgroup">
             <b>Key Priorities</b>
-            <div class="pf-pvrow"><i class="pf-sq"></i>Fuel economy</div>
-            <div class="pf-pvrow"><i class="pf-sq"></i>60-month financing</div>
-            <div class="pf-pvrow"><i class="pf-sq"></i>Trade-in value</div>
+            <div class="pf-pvrow"><i class="pf-sq" style="background:#EF4444"></i>Fuel economy</div>
+            <div class="pf-pvrow"><i class="pf-sq" style="background:#F59E0B"></i>60-month financing</div>
+            <div class="pf-pvrow"><i class="pf-sq" style="background:#FDE047"></i>Trade-in value</div>
           </div>
           <div class="pf-pvgroup">
             <b>Vehicle Interests</b>
-            <div class="pf-pvrow"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="M 2 10 l 1.4 -3.4 a 1.4 1.4 0 0 1 1.3 -0.9 h 6.6 a 1.4 1.4 0 0 1 1.3 0.9 L 14 10 v 2.6 h -1.7 v -1 H 3.7 v 1 H 2 Z" fill="#1E90FF"/></svg>Ford F-150 XLT</div>
-            <div class="pf-pvrow"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="M 2 10 l 1.4 -3.4 a 1.4 1.4 0 0 1 1.3 -0.9 h 6.6 a 1.4 1.4 0 0 1 1.3 0.9 L 14 10 v 2.6 h -1.7 v -1 H 3.7 v 1 H 2 Z" fill="#1E90FF"/></svg>Toyota Tundra SR5</div>
-            <div class="pf-pvrow"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="M 2 10 l 1.4 -3.4 a 1.4 1.4 0 0 1 1.3 -0.9 h 6.6 a 1.4 1.4 0 0 1 1.3 0.9 L 14 10 v 2.6 h -1.7 v -1 H 3.7 v 1 H 2 Z" fill="#1E90FF"/></svg>Dodge Ram 1500</div>
+            <div class="pf-pvrow"><img src="images/icons/car-blue.svg" alt="" width="16" height="16" loading="lazy">Ford F-150 XLT</div>
+            <div class="pf-pvrow"><img src="images/icons/car-blue.svg" alt="" width="16" height="16" loading="lazy">Toyota Tundra SR5</div>
+            <div class="pf-pvrow"><img src="images/icons/car-blue.svg" alt="" width="16" height="16" loading="lazy">Dodge Ram 1500</div>
           </div>
           <div class="pf-pvgroup">
             <b>Recent Activity</b>
-            <div class="pf-pvrow"><i class="pf-sq"></i>Test drive booked<time>15 Jun</time></div>
-            <div class="pf-pvrow"><i class="pf-sq"></i>Email sent<time>12 Jun</time></div>
-            <div class="pf-pvrow"><i class="pf-sq"></i>Follow-up call<time>09 Jun</time></div>
+            <div class="pf-pvrow"><i class="pf-sq" style="background:#10B981"></i>Test drive booked<time>15 Jun</time></div>
+            <div class="pf-pvrow"><i class="pf-sq" style="background:#1E90FF"></i>Email sent<time>12 Jun</time></div>
+            <div class="pf-pvrow"><i class="pf-sq" style="background:#F59E0B"></i>Follow-up call<time>09 Jun</time></div>
           </div>
         </div>
       </figure>
@@ -511,9 +514,12 @@
         <p class="pf-body" style="max-width: 519px;">TrustDriver is designed to complement your existing dealership systems, not replace them. Customer notes, summaries, profiles and activities can be synchronised back to your CRM, allowing your dealership to maintain existing workflows while gaining additional customer experience intelligence.</p>
       </div>
       <div class="pf-orbit" aria-hidden="true">
-        <i class="pf-orbit__ring" style="left: 51px; top: 32px; width: 486px; height: 486px;"></i>
-        <i class="pf-orbit__ring" style="left: 124px; top: 105px; width: 340px; height: 340px;"></i>
-        <span class="pf-orbit__center"><span class="pf-tdlogo pf-tdlogo--dark"><i class="pf-tdlogo__left"></i><i class="pf-tdlogo__right"></i></span></span>
+        <!-- dashed orbit rings — Figma: 2px dashed #091520 20%, dashes 15,15 (CSS border-dashed can't set dash length) -->
+        <svg class="pf-orbit__rings" viewBox="0 0 594 550" width="594" height="550" aria-hidden="true" focusable="false">
+          <circle cx="294" cy="275" r="219" fill="none" stroke="#091520" stroke-opacity="0.2" stroke-width="2" stroke-dasharray="15 15"/>
+          <circle cx="294" cy="275" r="169" fill="none" stroke="#091520" stroke-opacity="0.2" stroke-width="2" stroke-dasharray="15 15"/>
+        </svg>
+        <span class="pf-orbit__center"><img src="images/icons/TDLogo.svg" alt="TrustDriver" width="135" height="20" loading="lazy"></span>
         <span class="pf-orbit__logo" style="left: 211px; top: 0;"><img src="images/platform/crm-logo-1.png" alt="" width="143" height="48" loading="lazy"></span>
         <span class="pf-orbit__logo" style="left: 211px; top: 474px;"><img src="images/platform/crm-logo-2.png" alt="" width="135" height="36" loading="lazy"></span>
         <span class="pf-orbit__logo" style="left: 421px; top: 339px;"><img src="images/platform/crm-logo-3.png" alt="" width="140" height="40" loading="lazy"></span>
@@ -541,8 +547,8 @@
 
   <!-- ============================================================ CLOSING CTA -->
   <section class="pf-cta" aria-labelledby="pf-cta-title">
-    <svg class="pf-cta__stripes" viewBox="0 0 938.568 388.276" width="939" height="388" aria-hidden="true" focusable="false"><path d="M 660.219 388.276 L 903.245 0 L 938.568 0 L 695.542 388.276 L 660.219 388.276 Z M 567.059 388.276 L 810.085 0 L 872.866 0 L 629.841 388.276 L 567.059 388.276 Z M 417.194 388.276 L 660.219 0 L 769.58 0 L 526.556 388.276 L 417.194 388.276 Z M 269.354 388.276 L 512.379 0 L 621.741 0 L 378.71 388.276 L 269.354 388.276 Z M 0 388.276 L 243.025 0 L 473.9 0 L 230.874 388.276 L 0 388.276 Z" fill="#F9F9FF" fill-rule="nonzero"/></svg>
-    <img class="pf-cta__img" src="images/about/cta-dashboard.png" alt="" width="1058" height="698" loading="lazy">
+    <img class="pf-cta__stripes" src="images/homepage/sec9stripe.png" alt="" width="495" height="389" aria-hidden="true" loading="lazy">
+    <img class="pf-cta__img" src="images/homepage/sec9car.png" alt="" width="783" height="529" loading="lazy">
     <div class="pf-cta__content">
       <h2 id="pf-cta-title" class="pf-h2 pf-h2--white" style="max-width: 770px;">Create More Confident Buyers With Better Customer Understanding</h2>
       <p class="pf-body pf-body--white">Discover how TrustDriver can help your dealership improve customer experience, salesperson consistency and management visibility.</p>
@@ -559,7 +565,7 @@
 <footer class="s-footer">
   <div class="foot__top">
     <div class="foot__brand">
-      <a href="index.html" aria-label="TrustDriver home"><img class="foot__logo" src="images/logo.png" alt="TrustDriver" width="196" height="28"></a>
+      <a href="index.html" aria-label="TrustDriver home"><img class="foot__logo" src="images/icons/TDLogo.svg" alt="TrustDriver" width="189" height="28"></a>
       <p>TrustDriver helps dealerships create more confident buyers by helping salespeople understand customers better, deliver more valuable experiences, and guide opportunities more effectively throughout the buying journey.</p>
       <div class="foot__social">
         <a href="#" aria-label="TrustDriver on Facebook"><img src="images/icons/social-facebook.svg" alt="" width="18" height="18"></a>
@@ -611,6 +617,5 @@
   </div>
 </footer>
 <!-- @endinclude:footer -->
-
 </body>
 </html>

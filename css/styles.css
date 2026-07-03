@@ -289,7 +289,7 @@ p { margin: 0; }
 /* check-fill rows (24px icon) shared by benchmark / pilot lists */
 .featrow { display: flex; align-items: center; gap: 6px; font-size: 16px; line-height: 1.5; color: var(--ink); }
 .featrow .chk { width: 24px; height: 24px; flex: 0 0 24px; color: var(--accent); }
-.featrow img.chk { width: 18px; height: 18px; flex: 0 0 18px; }
+.featrow img.chk { width: 21px; height: 21px; flex: 0 0 18px; }
 
 /* ============================================================
    HOW DOES YOUR DEALERSHIP COMPARE  (node 1:112) — band 733
@@ -350,14 +350,14 @@ p { margin: 0; }
 /* ============================================================
    EXPERIENCE DIFFERENTIATOR  (node 1:143) — band 1125
    ============================================================ */
-.s-diff { height: 1125px; background: #edf0f4; }   /* Figma: light cool-gray band */
+.s-diff { height: 1125px; background: #f0f3f6; }   /* Figma: light cool-gray band */
 .s-diff__h { position: absolute; left: 282px; top: 120px; width: 875px; text-align: center; }
 .s-diff__rows {
   position: absolute; left: 131px; top: 276px; width: 1178px;
   display: flex; flex-direction: column; align-items: center; gap: 14px;
 }
 .s-diff__rows .line { display: flex; justify-content: center; gap: 14px; }
-.s-diff__rows .featrow { background: #fff; border-radius: 10000px; padding: 10px 14px; gap: 10px; }
+.s-diff__rows .featrow { background: #fff; border-radius: 10000px; padding: 10px 14px; gap: 6px; }
 .s-diff__quote {
   position: absolute; left: 226px; top: 602px; width: 987px; height: 132px;
   background: var(--accent); border-radius: 16px; color: #fff; overflow: hidden;
@@ -402,7 +402,7 @@ p { margin: 0; }
    REPEATABLE BEHAVIOURS — dark CTA band (node 1:232) — 535
    ============================================================ */
 .s-repeat {
-  height: 535px; background: var(--accent); overflow: hidden;
+  height: 535px; background: #1e90ff; overflow: hidden;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: 24px; text-align: center;
 }
