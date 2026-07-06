@@ -107,7 +107,9 @@ p { margin: 0; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 100px;
+  /* 100px gutters of the 1440 design; past 1440 the padding grows so the
+     content stays capped at 1240 and centered (bg stays full-bleed) */
+  padding: 18px max(100px, calc(50% - 620px));
 }
 .nav__brand { display: flex; align-items: center; }
 .nav__logo { display: inline-flex; align-items: center; }
@@ -544,7 +546,8 @@ p { margin: 0; }
    FOOTER (symbol 1:400) — 541  [approximated]
    ============================================================ */
 /* Light footer (design node 33:1120) */
-.s-footer { background: #fff; color: #6b7688; padding: 64px 100px 40px; }
+/* same 1440-design gutters as .nav — content caps at 1240 on wide screens */
+.s-footer { background: #fff; color: #6b7688; padding: 64px max(100px, calc(50% - 620px)) 40px; }
 .foot__top { display: flex; justify-content: space-between; gap: 60px; }
 /* Figma auto-layout: vertical frame, item spacing 24 */
 .foot__brand { width: 440px; display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
@@ -554,8 +557,11 @@ p { margin: 0; }
 .foot__social a { display: inline-flex; }
 .foot__social img { width: 18px; height: 18px; display: block; }
 .foot__cols { display: flex; gap: 90px; }
-.foot__col h4 { margin: 0 0 22px; font-family: var(--font-head); font-weight: 600; font-size: 18px; color: var(--ink); }
-.foot__col a { display: block; margin-bottom: 16px; font-size: 15px; color: #6b7688; text-decoration: none; }
+/* Figma auto-layout: column = [heading, links-group] gap 40; links-group gap 18 */
+.foot__col { display: flex; flex-direction: column; align-items: flex-start; gap: 40px; }
+.foot__col h4 { margin: 0; font-family: var(--font-head); font-weight: 600; font-size: 18px; color: var(--ink); }
+.foot__links { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+.foot__col a { display: block; font-size: 15px; color: #6b7688; text-decoration: none; }
 .foot__col a:hover { color: var(--accent); }
 .foot__contact { display: flex; flex-direction: column; gap: 18px; }
 .foot__contact .row { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: #4b5a68; text-decoration: none; }
