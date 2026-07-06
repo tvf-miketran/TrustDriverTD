@@ -32,7 +32,8 @@
 .plt-page *::before,
 .plt-page *::after { box-sizing: border-box; }
 
-.plt-page h1, .plt-page h2, .plt-page h3, .plt-page p, .plt-page ul { margin: 0; }
+/* scoped to main so the shared header/footer chrome keeps its styles.css margins */
+.plt-page main h1, .plt-page main h2, .plt-page main h3, .plt-page main p, .plt-page main ul { margin: 0; }
 .plt-page ul { padding: 0; list-style: none; }
 .plt-page img { display: block; }
 

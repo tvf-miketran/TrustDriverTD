@@ -28,7 +28,8 @@
 .res-page *,
 .res-page *::before,
 .res-page *::after { box-sizing: border-box; }
-.res-page h1, .res-page h2, .res-page h3, .res-page p, .res-page ul, .res-page figure { margin: 0; }
+/* scoped to main so the shared header/footer chrome keeps its styles.css margins */
+.res-page main h1, .res-page main h2, .res-page main h3, .res-page main p, .res-page main ul, .res-page main figure { margin: 0; }
 .res-page ul { padding: 0; list-style: none; }
 .res-page img { display: block; }
 

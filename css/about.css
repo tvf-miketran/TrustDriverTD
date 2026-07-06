@@ -27,7 +27,8 @@
 .abt-page *,
 .abt-page *::before,
 .abt-page *::after { box-sizing: border-box; }
-.abt-page h1, .abt-page h2, .abt-page h3, .abt-page p, .abt-page ul, .abt-page figure { margin: 0; }
+/* scoped to main so the shared header/footer chrome keeps its styles.css margins */
+.abt-page main h1, .abt-page main h2, .abt-page main h3, .abt-page main p, .abt-page main ul, .abt-page main figure { margin: 0; }
 .abt-page ul { padding: 0; list-style: none; }
 .abt-page img { display: block; }
 

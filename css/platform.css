@@ -27,7 +27,8 @@
 .pf-page *,
 .pf-page *::before,
 .pf-page *::after { box-sizing: border-box; }
-.pf-page h1, .pf-page h2, .pf-page p, .pf-page ul, .pf-page figure, .pf-page hr { margin: 0; }
+/* scoped to main so the shared header/footer chrome keeps its styles.css margins */
+.pf-page main h1, .pf-page main h2, .pf-page main p, .pf-page main ul, .pf-page main figure, .pf-page main hr { margin: 0; }
 .pf-page ul { padding: 0; list-style: none; }
 .pf-page img { display: block; }
 .pf-page b { font-weight: 600; }
@@ -967,6 +968,12 @@
 .pf-cta__content .pf-body { max-width: 457px; }
 .pf-cta__actions { display: flex; flex-direction: column; gap: 12px; width: 347px; max-width: 100%; }
 .pf-cta__actions .pf-btn { width: 100%; }
+
+/* ≥1441px: zoom the fixed 1440px CTA composition to fill the viewport width —
+   same mechanism as the homepage canvas (fit-page.js sets --page-scale). */
+@media (min-width: 1441px) {
+  .pf-cta { zoom: var(--page-scale, 1); }
+}
 
 /* ==========================================================================
    RESPONSIVE

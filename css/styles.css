@@ -546,10 +546,11 @@ p { margin: 0; }
 /* Light footer (design node 33:1120) */
 .s-footer { background: #fff; color: #6b7688; padding: 64px 100px 40px; }
 .foot__top { display: flex; justify-content: space-between; gap: 60px; }
-.foot__brand { width: 440px; }
+/* Figma auto-layout: vertical frame, item spacing 24 */
+.foot__brand { width: 440px; display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
 .foot__logo { height: 28px; width: auto; display: block; }
-.foot__brand p { margin-top: 20px; font-size: 15px; line-height: 1.7; color: #4b5a68; }
-.foot__social { margin-top: 22px; display: flex; gap: 16px; }
+.foot__brand p { font-size: 15px; line-height: 1.7; color: #4b5a68; }
+.foot__social { display: flex; gap: 16px; }
 .foot__social a { display: inline-flex; }
 .foot__social img { width: 18px; height: 18px; display: block; }
 .foot__cols { display: flex; gap: 90px; }

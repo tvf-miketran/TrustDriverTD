@@ -32,7 +32,8 @@
 .sol-page *::before,
 .sol-page *::after { box-sizing: border-box; }
 
-.sol-page h1, .sol-page h2, .sol-page h3, .sol-page p, .sol-page ul, .sol-page blockquote { margin: 0; }
+/* scoped to main so the shared header/footer chrome keeps its styles.css margins */
+.sol-page main h1, .sol-page main h2, .sol-page main h3, .sol-page main p, .sol-page main ul, .sol-page main blockquote { margin: 0; }
 .sol-page ul { padding: 0; list-style: none; }
 .sol-page img { display: block; }
 
