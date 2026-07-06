@@ -157,31 +157,30 @@
 
 .pf-hero {
   position: relative;
-  background: var(--pf-blue);
+  background: #fff;
   padding: 96px 100px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 80px;
 }
+/* The blue backdrop is ONE clipped layer over the section's white background;
+   the clip leaves the 216px bottom strip + left diagonal notch white. Painting
+   white shapes OVER a blue section instead created layer seams (white-over-blue
+   edges + blue section bottom) that leaked 1px blue hairlines at fractional
+   browser-zoom levels. */
 .pf-hero::before {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 216px;
-  background: #fff;
-}
-.pf-hero::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 216px;
-  width: 113.5px;
-  height: 113px;
-  background: #fff;
-  clip-path: polygon(0 0, 0 100%, 100% 100%);
+  inset: 0;
+  background: var(--pf-blue);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 216px),
+    113.5px calc(100% - 216px),
+    0 calc(100% - 329px)
+  );
 }
 .pf-hero__head {
   position: relative;
@@ -940,16 +939,19 @@
   background: var(--pf-blue);
   overflow: hidden;
 }
+/* Art tracks the 1440px grid center; on wider viewports the max() pins it
+   flush to the right edge (matching the homepage composition) instead of
+   leaving a blue gap. */
 .pf-cta__stripes {
   position: absolute;
-  left: calc(50% + 225px);
+  left: max(calc(50% + 225px), calc(100% - 495px));
   top: 75px;
   width: 495px;
   height: 389px;
 }
 .pf-cta__img {
   position: absolute;
-  left: calc(50% - 63px);
+  left: max(calc(50% - 63px), calc(100% - 783px));
   top: 0;
   width: 783px;
   height: 529px;
@@ -969,12 +971,6 @@
 .pf-cta__actions { display: flex; flex-direction: column; gap: 12px; width: 347px; max-width: 100%; }
 .pf-cta__actions .pf-btn { width: 100%; }
 
-/* ≥1441px: zoom the fixed 1440px CTA composition to fill the viewport width —
-   same mechanism as the homepage canvas (fit-page.js sets --page-scale). */
-@media (min-width: 1441px) {
-  .pf-cta { zoom: var(--page-scale, 1); }
-}
-
 /* ==========================================================================
    RESPONSIVE
    ========================================================================== */
@@ -990,7 +986,8 @@
 
 @media (max-width: 1180px) {
   .pf-hero__title { font-size: 46px; }
-  .pf-hero::after { display: none; }
+  /* drop the diagonal notch: blue rectangle ending 216px above the bottom */
+  .pf-hero::before { clip-path: none; bottom: 216px; }
   .pf-split { flex-direction: column; align-items: flex-start; gap: 48px; }
   .pf-diff .pf-split,
   .pf-feature--paper .pf-split,
